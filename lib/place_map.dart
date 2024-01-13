@@ -505,24 +505,12 @@ class _CategoryButtonBar extends StatelessWidget {
               FilledButton(
                 style: FilledButton.styleFrom(
                     backgroundColor:
-                        selectedPlaceCategory == PlaceCategory.information
+                        selectedPlaceCategory == PlaceCategory.statoins
                             ? Colors.black
                             : Colors.lightGreen),
-                onPressed: () => onChanged(PlaceCategory.information),
+                onPressed: () => onChanged(PlaceCategory.statoins),
                 child: const Text(
-                  'Information',
-                  style: TextStyle(color: Colors.white, fontSize: 14.0),
-                ),
-              ),
-              FilledButton(
-                style: FilledButton.styleFrom(
-                    backgroundColor:
-                        selectedPlaceCategory == PlaceCategory.hours
-                            ? Colors.green[700]
-                            : Colors.lightGreen),
-                onPressed: () => onChanged(PlaceCategory.hours),
-                child: const Text(
-                  'Hours of Operation',
+                  'Stations',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
                 ),
               ),
@@ -534,10 +522,22 @@ class _CategoryButtonBar extends StatelessWidget {
                             : Colors.lightGreen),
                 onPressed: () => onChanged(PlaceCategory.parking),
                 child: const Text(
-                  'Parking',
+                  'Parking Lots',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
                 ),
               ),
+              // FilledButton(
+              //   style: FilledButton.styleFrom(
+              //       backgroundColor:
+              //           selectedPlaceCategory == PlaceCategory.parking
+              //               ? Colors.green[700]
+              //               : Colors.lightGreen),
+              //   onPressed: () => onChanged(PlaceCategory.parking),
+              //   child: const Text(
+              //     'Parking',
+              //     style: TextStyle(color: Colors.white, fontSize: 14.0),
+              //   ),
+              // ),
             ],
           ),
         ),
