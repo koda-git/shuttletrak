@@ -404,16 +404,24 @@ class _PlaceMapState extends State<PlaceMap> {
     });
   }
 
-  Future<BitmapDescriptor> _getPlaceMarkerIcon(PlaceCategory category) =>
-      switch (category) {
-        PlaceCategory.favorite => BitmapDescriptor.fromAssetImage(
-            createLocalImageConfiguration(context, size: const Size.square(32)),
-            'assets/heart.png'),
-        PlaceCategory.visited => BitmapDescriptor.fromAssetImage(
-            createLocalImageConfiguration(context, size: const Size.square(32)),
-            'assets/visited.png'),
-        PlaceCategory.wantToGo => Future.value(BitmapDescriptor.defaultMarker),
-      };
+Future<BitmapDescriptor> _getPlaceMarkerIcon(PlaceCategory category) {
+  switch (category) {
+    case PlaceCategory.favorite:
+      return BitmapDescriptor.fromAssetImage(
+        createLocalImageConfiguration(context, size: const Size.square(32)),
+        'assets/heart.png',
+      );
+    case PlaceCategory.visited:
+      return BitmapDescriptor.fromAssetImage(
+        createLocalImageConfiguration(context, size: const Size.square(32)),
+        'assets/visited.png',
+      );
+    case PlaceCategory.wantToGo:
+      return Future.value(BitmapDescriptor.defaultMarker);
+    default:
+      return Future.value(BitmapDescriptor.defaultMarker);
+  }
+}
 
   static List<Place> _getPlacesForCategory(
       PlaceCategory category, List<Place> places) {

@@ -64,11 +64,18 @@ class _CategoryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final buttonText = switch (category) {
-      PlaceCategory.favorite => 'Favorites',
-      PlaceCategory.visited => 'Visited',
-      PlaceCategory.wantToGo => 'Want To Go'
-    };
+  final buttonText = (() {
+    switch (category) {
+      case PlaceCategory.favorite:
+        return 'Favorites';
+      case PlaceCategory.visited:
+        return 'Visited';
+      case PlaceCategory.wantToGo:
+        return 'Want To Go';
+      default:
+        return '';
+    }
+  })();
 
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 12.0),
