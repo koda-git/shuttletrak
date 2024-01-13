@@ -14,7 +14,7 @@ class StubData {
       name: 'Deschutes Brewery',
       description:
           'Beers brewed on-site & gourmet pub grub in a converted auto-body shop with a fireplace & wood beams.',
-      category: PlaceCategory.favorite,
+      category: PlaceCategory.information,
       starRating: 5,
     ),
     Place(
@@ -22,8 +22,8 @@ class StubData {
       latLng: LatLng(45.516887, -122.675417),
       name: 'Luc Lac Vietnamese Kitchen',
       description:
-          'Popular counter-serve offering pho, banh mi & other Vietnamese favorites in a stylish setting.',
-      category: PlaceCategory.favorite,
+          'Popular counter-serve offering pho, banh mi & other Vietnamese informations in a stylish setting.',
+      category: PlaceCategory.information,
       starRating: 5,
     ),
     Place(
@@ -32,7 +32,7 @@ class StubData {
       name: 'Salt & Straw',
       description:
           'Quirky flavors & handmade waffle cones draw crowds to this artisinal ice cream maker\'s 3 parlors.',
-      category: PlaceCategory.favorite,
+      category: PlaceCategory.information,
       starRating: 5,
     ),
     Place(
@@ -41,7 +41,7 @@ class StubData {
       name: 'TILT',
       description:
           'This stylish American eatery offers unfussy breakfast fare, cocktails & burgers in industrial-themed digs.',
-      category: PlaceCategory.favorite,
+      category: PlaceCategory.information,
       starRating: 4,
     ),
     Place(
@@ -50,7 +50,7 @@ class StubData {
       name: 'White Owl Social Club',
       description:
           'Chill haunt with local beers, burgers & vegan eats, plus live music & an airy patio with a fire pit.',
-      category: PlaceCategory.favorite,
+      category: PlaceCategory.information,
       starRating: 4,
     ),
     Place(
@@ -112,7 +112,7 @@ class StubData {
       latLng: LatLng(45.420226, -122.740347),
       name: 'Oswego Grill',
       description:
-          'Wood-grilled steakhouse favorites served in a casual, romantic restaurant with a popular happy hour.',
+          'Wood-grilled steakhouse informations served in a casual, romantic restaurant with a popular happy hour.',
       category: PlaceCategory.wantToGo,
       starRating: 4,
     ),
@@ -146,7 +146,7 @@ class StubData {
   ];
 
   static const reviewStrings = [
-    'My favorite place in Portland. The employees are wonderful and so is the food. I go here at least once a month!',
+    'My information place in Portland. The employees are wonderful and so is the food. I go here at least once a month!',
     'Staff was very friendly. Great atmosphere and good music. Would recommend.',
     'Best. Place. In. Town. Period.'
   ];

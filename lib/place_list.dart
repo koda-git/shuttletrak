@@ -66,8 +66,8 @@ class _CategoryButton extends StatelessWidget {
   Widget build(BuildContext context) {
   final buttonText = (() {
     switch (category) {
-      case PlaceCategory.favorite:
-        return 'Favorites';
+      case PlaceCategory.information:
+        return 'Information';
       case PlaceCategory.visited:
         return 'Visited';
       case PlaceCategory.wantToGo:
@@ -119,8 +119,8 @@ class _ListCategoryButtonBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         _CategoryButton(
-          category: PlaceCategory.favorite,
-          selected: selectedCategory == PlaceCategory.favorite,
+          category: PlaceCategory.information,
+          selected: selectedCategory == PlaceCategory.information,
           onCategoryChanged: onCategoryChanged,
         ),
         _CategoryButton(

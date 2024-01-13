@@ -66,7 +66,7 @@ class Place {
 }
 
 enum PlaceCategory {
-  favorite,
+  information,
   visited,
   wantToGo,
 }

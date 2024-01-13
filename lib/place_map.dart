@@ -406,7 +406,7 @@ class _PlaceMapState extends State<PlaceMap> {
 
 Future<BitmapDescriptor> _getPlaceMarkerIcon(PlaceCategory category) {
   switch (category) {
-    case PlaceCategory.favorite:
+    case PlaceCategory.information:
       return BitmapDescriptor.fromAssetImage(
         createLocalImageConfiguration(context, size: const Size.square(32)),
         'assets/heart.png',
@@ -505,12 +505,12 @@ class _CategoryButtonBar extends StatelessWidget {
               FilledButton(
                 style: FilledButton.styleFrom(
                     backgroundColor:
-                        selectedPlaceCategory == PlaceCategory.favorite
+                        selectedPlaceCategory == PlaceCategory.information
                             ? Colors.green[700]
                             : Colors.lightGreen),
-                onPressed: () => onChanged(PlaceCategory.favorite),
+                onPressed: () => onChanged(PlaceCategory.information),
                 child: const Text(
-                  'Favorites',
+                  'Information',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
                 ),
               ),
