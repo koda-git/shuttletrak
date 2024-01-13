@@ -506,7 +506,7 @@ class _CategoryButtonBar extends StatelessWidget {
                 style: FilledButton.styleFrom(
                     backgroundColor:
                         selectedPlaceCategory == PlaceCategory.information
-                            ? Colors.green[700]
+                            ? Colors.black
                             : Colors.lightGreen),
                 onPressed: () => onChanged(PlaceCategory.information),
                 child: const Text(
@@ -534,7 +534,7 @@ class _CategoryButtonBar extends StatelessWidget {
                             : Colors.lightGreen),
                 onPressed: () => onChanged(PlaceCategory.parking),
                 child: const Text(
-                  'Want To Go',
+                  'Parking',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
                 ),
               ),
