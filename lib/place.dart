@@ -67,6 +67,6 @@ class Place {
 
 enum PlaceCategory {
   information,
-  visited,
-  wantToGo,
+  hours,
+  parking,
 }

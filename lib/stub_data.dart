@@ -59,7 +59,7 @@ class StubData {
       name: 'Buffalo Wild Wings',
       description:
           'Lively sports-bar chain dishing up wings & other American pub grub amid lots of large-screen TVs.',
-      category: PlaceCategory.visited,
+      category: PlaceCategory.hours,
       starRating: 5,
     ),
     Place(
@@ -68,7 +68,7 @@ class StubData {
       name: 'Chevys',
       description:
           'Lively, informal Mexican chain with a colorful, family-friendly setting plus tequilas & margaritas.',
-      category: PlaceCategory.visited,
+      category: PlaceCategory.hours,
       starRating: 4,
     ),
     Place(
@@ -77,7 +77,7 @@ class StubData {
       name: 'Cinetopia',
       description:
           'Moviegoers can take food from the on-site eatery to their seats, with table service in 21+ theaters.',
-      category: PlaceCategory.visited,
+      category: PlaceCategory.hours,
       starRating: 4,
     ),
     Place(
@@ -86,7 +86,7 @@ class StubData {
       name: 'Thai Cuisine',
       description:
           'Informal restaurant offering Thai standards in a modest setting, plus takeout & delivery.',
-      category: PlaceCategory.visited,
+      category: PlaceCategory.hours,
       starRating: 4,
     ),
     Place(
@@ -95,7 +95,7 @@ class StubData {
       name: 'The Old Spaghetti Factory',
       description:
           'Family-friendly chain eatery featuring traditional Italian entrees amid turn-of-the-century decor.',
-      category: PlaceCategory.visited,
+      category: PlaceCategory.hours,
       starRating: 4,
     ),
     Place(
@@ -104,7 +104,7 @@ class StubData {
       name: 'Mississippi Pizza',
       description:
           'Music, trivia & other all-ages events featured at pizzeria with lounge & vegan & gluten-free pies.',
-      category: PlaceCategory.wantToGo,
+      category: PlaceCategory.parking,
       starRating: 4,
     ),
     Place(
@@ -113,7 +113,7 @@ class StubData {
       name: 'Oswego Grill',
       description:
           'Wood-grilled steakhouse informations served in a casual, romantic restaurant with a popular happy hour.',
-      category: PlaceCategory.wantToGo,
+      category: PlaceCategory.parking,
       starRating: 4,
     ),
     Place(
@@ -122,7 +122,7 @@ class StubData {
       name: 'The Widmer Brothers Brewery',
       description:
           'Popular, enduring gastropub serving craft beers, sandwiches & eclectic entrees in a laid-back space.',
-      category: PlaceCategory.wantToGo,
+      category: PlaceCategory.parking,
       starRating: 4,
     ),
     Place(
@@ -131,7 +131,7 @@ class StubData {
       name: 'TopGolf',
       description:
           'Sprawling entertainment venue with a high-tech driving range & swanky lounge with drinks & games.',
-      category: PlaceCategory.wantToGo,
+      category: PlaceCategory.parking,
       starRating: 5,
     ),
     Place(
@@ -140,7 +140,7 @@ class StubData {
       name: 'Uwajimaya Beaverton',
       description:
           'Huge Asian grocery outpost stocking meats, produce & prepared foods plus gifts & home goods.',
-      category: PlaceCategory.wantToGo,
+      category: PlaceCategory.parking,
       starRating: 5,
     ),
   ];

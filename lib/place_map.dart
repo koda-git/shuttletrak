@@ -411,12 +411,12 @@ Future<BitmapDescriptor> _getPlaceMarkerIcon(PlaceCategory category) {
         createLocalImageConfiguration(context, size: const Size.square(32)),
         'assets/heart.png',
       );
-    case PlaceCategory.visited:
+    case PlaceCategory.hours:
       return BitmapDescriptor.fromAssetImage(
         createLocalImageConfiguration(context, size: const Size.square(32)),
-        'assets/visited.png',
+        'assets/hours.png',
       );
-    case PlaceCategory.wantToGo:
+    case PlaceCategory.parking:
       return Future.value(BitmapDescriptor.defaultMarker);
     default:
       return Future.value(BitmapDescriptor.defaultMarker);
@@ -517,22 +517,22 @@ class _CategoryButtonBar extends StatelessWidget {
               FilledButton(
                 style: FilledButton.styleFrom(
                     backgroundColor:
-                        selectedPlaceCategory == PlaceCategory.visited
+                        selectedPlaceCategory == PlaceCategory.hours
                             ? Colors.green[700]
                             : Colors.lightGreen),
-                onPressed: () => onChanged(PlaceCategory.visited),
+                onPressed: () => onChanged(PlaceCategory.hours),
                 child: const Text(
-                  'Visited',
+                  'Hours of Operation',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
                 ),
               ),
               FilledButton(
                 style: FilledButton.styleFrom(
                     backgroundColor:
-                        selectedPlaceCategory == PlaceCategory.wantToGo
+                        selectedPlaceCategory == PlaceCategory.parking
                             ? Colors.green[700]
                             : Colors.lightGreen),
-                onPressed: () => onChanged(PlaceCategory.wantToGo),
+                onPressed: () => onChanged(PlaceCategory.parking),
                 child: const Text(
                   'Want To Go',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),

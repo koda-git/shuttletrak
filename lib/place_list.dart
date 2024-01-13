@@ -68,9 +68,9 @@ class _CategoryButton extends StatelessWidget {
     switch (category) {
       case PlaceCategory.information:
         return 'Information';
-      case PlaceCategory.visited:
+      case PlaceCategory.hours:
         return 'Visited';
-      case PlaceCategory.wantToGo:
+      case PlaceCategory.parking:
         return 'Want To Go';
       default:
         return '';
@@ -124,13 +124,13 @@ class _ListCategoryButtonBar extends StatelessWidget {
           onCategoryChanged: onCategoryChanged,
         ),
         _CategoryButton(
-          category: PlaceCategory.visited,
-          selected: selectedCategory == PlaceCategory.visited,
+          category: PlaceCategory.hours,
+          selected: selectedCategory == PlaceCategory.hours,
           onCategoryChanged: onCategoryChanged,
         ),
         _CategoryButton(
-          category: PlaceCategory.wantToGo,
-          selected: selectedCategory == PlaceCategory.wantToGo,
+          category: PlaceCategory.parking,
+          selected: selectedCategory == PlaceCategory.parking,
           onCategoryChanged: onCategoryChanged,
         ),
       ],
