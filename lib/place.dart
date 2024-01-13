@@ -11,6 +11,8 @@ class Place {
   final PlaceCategory category;
   final String? description;
   final int starRating;
+  final double price;
+  final bool handicapped;
 
   const Place({
     required this.id,
@@ -18,7 +20,9 @@ class Place {
     required this.name,
     required this.category,
     this.description,
-    this.starRating = 0,
+    this.starRating = 0, 
+    required this.price,
+    this.handicapped = false,
   }) : assert(starRating >= 0 && starRating <= 5);
 
   double get latitude => latLng.latitude;
@@ -34,6 +38,8 @@ class Place {
     int? starRating,
   }) {
     return Place(
+      price: price ?? this.price,
+      handicapped: handicapped ?? this.handicapped,
       id: id ?? this.id,
       latLng: latLng ?? this.latLng,
       name: name ?? this.name,

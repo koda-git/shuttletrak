@@ -187,6 +187,7 @@ class _PlaceMapState extends State<PlaceMap> {
       // Create a new Place and map it to the marker we just added.
       final appState = Provider.of<AppState>(context, listen: false);
       final newPlace = Place(
+        price: 0.0,
         id: const Uuid().v1(),
         latLng: _pendingMarker!.position,
         name: _pendingMarker!.infoWindow.title!,

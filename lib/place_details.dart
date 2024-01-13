@@ -85,14 +85,14 @@ class _PlaceDetailsState extends State<PlaceDetails> {
             });
           },
         ),
-        _StarBar(
+        /* _StarBar(
           rating: _place.starRating,
           onChanged: (value) {
             setState(() {
               _place = _place.copyWith(starRating: value);
             });
           },
-        ),
+        ), */
         _Map(
           center: _place.latLng,
           mapController: _mapController,
@@ -311,7 +311,7 @@ class _Reviews extends StatelessWidget {
   }
 }
 
-class _StarBar extends StatelessWidget {
+/* class _StarBar extends StatelessWidget {
   static const int maxStars = 5;
 
   final int rating;
@@ -338,4 +338,4 @@ class _StarBar extends StatelessWidget {
       }).toList(),
     );
   }
-}
+} */
