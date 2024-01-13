@@ -22,6 +22,7 @@
 **/doc/api/
 .dart_tool/
 .flutter-plugins
+.flutter-plugins-dependencies
 .packages
 .pub-cache/
 .pub/
@@ -72,4 +73,3 @@
 
 # Flutter Web files
 lib/generated_plugin_registrant.dart
-.flutter-plugins-dependencies
