@@ -70,7 +70,7 @@ class _CategoryButton extends StatelessWidget {
         return 'Information';
       case PlaceCategory.hours:
         return 'Hours of Operation';
-      case PlaceCategory.parking:
+      case PlaceCategory.account:
         return 'Parking Account';
       default:
         return '';
