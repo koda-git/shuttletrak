@@ -10,53 +10,57 @@ class StubData {
   static const List<Place> places = [
     Place(
       id: '1',
-      latLng: LatLng(45.524676, -122.681922),
-      name: 'Deschutes Brewery',
+      latLng: LatLng(43.26190473559966, -79.91758362123105),
+      name: 'Parking Lot A',
       description:
-          'Beers brewed on-site & gourmet pub grub in a converted auto-body shop with a fireplace & wood beams.',
+          'Located between McMaster Divinity College and L.R.Wilson Hall.',
       category: PlaceCategory.information,
+      //TODO change star rating to parking price
       starRating: 5,
     ),
     Place(
       id: '2',
-      latLng: LatLng(45.516887, -122.675417),
-      name: 'Luc Lac Vietnamese Kitchen',
+      latLng: LatLng(43.26318471911702, -79.91630224146421),
+      name: 'Parking Lot B',
       description:
-          'Popular counter-serve offering pho, banh mi & other Vietnamese informations in a stylish setting.',
+          'Located at Stearn Dr, behind MUSC and Mills Memorial Library.',
       category: PlaceCategory.information,
+      //TODO change star rating to parking price
       starRating: 5,
     ),
     Place(
       id: '3',
-      latLng: LatLng(45.528952, -122.698344),
-      name: 'Salt & Straw',
+      latLng: LatLng(43.26415412074149, -79.91594564905269),
+      name: 'Parking Lot C',
       description:
-          'Quirky flavors & handmade waffle cones draw crowds to this artisinal ice cream maker\'s 3 parlors.',
+          'Located at Stearn Dr, behind Togo Salmon Hall.',
       category: PlaceCategory.information,
+      //TODO change star rating to parking price
       starRating: 5,
     ),
     Place(
       id: '4',
-      latLng: LatLng(45.525253, -122.684423),
-      name: 'TILT',
+      latLng: LatLng(43.26442018727773, -79.91507986874191),
+      name: 'Parking Lot D',
       description:
-          'This stylish American eatery offers unfussy breakfast fare, cocktails & burgers in industrial-themed digs.',
+          'Located next to Parking Lot C on Stearn Dr at Forsyth Ave.',
       category: PlaceCategory.information,
+      //TODO change star rating to parking price
       starRating: 4,
     ),
     Place(
       id: '5',
-      latLng: LatLng(45.513485, -122.657982),
-      name: 'White Owl Social Club',
+      latLng: LatLng(43.262119939696674, -79.91687757775354),
+      name: 'L.R. Wilson Underground Parking',
       description:
-          'Chill haunt with local beers, burgers & vegan eats, plus live music & an airy patio with a fire pit.',
+          'Located underground at L.R. Wilson Hall.',
       category: PlaceCategory.information,
       starRating: 4,
     ),
     Place(
       id: '6',
-      latLng: LatLng(45.487137, -122.799940),
-      name: 'Buffalo Wild Wings',
+      latLng: LatLng(43.26615408870222, -79.91693340172318),
+      name: 'Stadium Underground Parking',
       description:
           'Lively sports-bar chain dishing up wings & other American pub grub amid lots of large-screen TVs.',
       category: PlaceCategory.hours,
