@@ -72,7 +72,7 @@ class _PlaceTrackerHomePage extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
-              child: Image(image: AssetImage('asset/logo.png'))
+              child: Image(image: AssetImage('assets/logo.png'))
               // child: Icon(Icons.pin_drop, size: 24.0),
             ),
             Text('ShuttleTrak'),
