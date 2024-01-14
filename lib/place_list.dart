@@ -71,7 +71,7 @@ class _CategoryButton extends StatelessWidget {
       case PlaceCategory.hours:
         return 'Hours of Operation';
       case PlaceCategory.account:
-        return 'Parking Account';
+        return 'Account';
       default:
         return '';
     }
@@ -82,7 +82,7 @@ class _CategoryButton extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: selected ? Colors.blue : Colors.transparent,
+            color: selected ? const Color(0xff741D4A) : Colors.transparent,
           ),
         ),
       ),
@@ -93,7 +93,7 @@ class _CategoryButton extends StatelessWidget {
             buttonText,
             style: TextStyle(
               fontSize: selected ? 20.0 : 18.0,
-              color: selected ? Colors.blue : Colors.black87,
+              color: selected ? const Color(0xff741D4A): Colors.black87,
             ),
           ),
           onPressed: () => onCategoryChanged(category),
