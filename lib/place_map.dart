@@ -185,74 +185,74 @@ class _PlaceMapState extends State<PlaceMap> {
     );
   }
 
-  void _cancelAddPlace() {
-    if (_pendingMarker != null) {
-      setState(() {
-        _markers.remove(_pendingMarker);
-        _pendingMarker = null;
-      });
-    }
-  }
+  // void _cancelAddPlace() {
+  //   if (_pendingMarker != null) {
+  //     setState(() {
+  //       _markers.remove(_pendingMarker);
+  //       _pendingMarker = null;
+  //     });
+  //   }
+  // }
 
-  Future<void> _confirmAddPlace(BuildContext context) async {
-    if (!context.mounted) return;
-    if (_pendingMarker != null) {
-      // Create a new Place and map it to the marker we just added.
-      final appState = Provider.of<AppState>(context, listen: false);
-      final newPlace = Place(
-        price: 0.0,
-        id: const Uuid().v1(),
-        latLng: _pendingMarker!.position,
-        name: _pendingMarker!.infoWindow.title!,
-        category: appState.selectedCategory,
-      );
+  // Future<void> _confirmAddPlace(BuildContext context) async {
+  //   if (!context.mounted) return;
+  //   if (_pendingMarker != null) {
+  //     // Create a new Place and map it to the marker we just added.
+  //     final appState = Provider.of<AppState>(context, listen: false);
+  //     final newPlace = Place(
+  //       price: 0.0,
+  //       id: const Uuid().v1(),
+  //       latLng: _pendingMarker!.position,
+  //       name: _pendingMarker!.infoWindow.title!,
+  //       category: appState.selectedCategory,
+  //     );
 
-      final scaffoldMessenger = ScaffoldMessenger.of(context);
+  //     final scaffoldMessenger = ScaffoldMessenger.of(context);
 
-      var placeMarker = await _getPlaceMarkerIcon(appState.selectedCategory);
-      var busMarker = await _getBusIcon();
+  //     var placeMarker = await _getPlaceMarkerIcon(appState.selectedCategory);
+  //     var busMarker = await _getBusIcon();
 
-      setState(() {
-        final updatedMarker = _pendingMarker!.copyWith(
-          iconParam: placeMarker,
-          infoWindowParam: InfoWindow(
-            title: 'New Place',
-            snippet: null,
-            onTap: () => context.go('/place/${newPlace.id}'),
-          ),
-          draggableParam: false,
-        );
+  //     setState(() {
+  //       final updatedMarker = _pendingMarker!.copyWith(
+  //         iconParam: placeMarker,
+  //         infoWindowParam: InfoWindow(
+  //           title: 'New Place',
+  //           snippet: null,
+  //           onTap: () => context.go('/place/${newPlace.id}'),
+  //         ),
+  //         draggableParam: false,
+  //       );
 
-        _updateMarker(
-          marker: _pendingMarker,
-          updatedMarker: updatedMarker,
-          place: newPlace,
-        );
+  //       _updateMarker(
+  //         marker: _pendingMarker,
+  //         updatedMarker: updatedMarker,
+  //         place: newPlace,
+  //       );
 
-        _pendingMarker = null;
-      });
+  //       _pendingMarker = null;
+  //     });
 
-      // Show a confirmation snackbar that has an action to edit the new place.
-      scaffoldMessenger.showSnackBar(
-        SnackBar(
-          duration: const Duration(seconds: 3),
-          content:
-              const Text('New place added.', style: TextStyle(fontSize: 16.0)),
-          action: SnackBarAction(
-            label: 'Edit',
-            onPressed: () async {
-              context.go('/place/${newPlace.id}');
-            },
-          ),
-        ),
-      );
+  //     // Show a confirmation snackbar that has an action to edit the new place.
+  //     scaffoldMessenger.showSnackBar(
+  //       SnackBar(
+  //         duration: const Duration(seconds: 3),
+  //         content:
+  //             const Text('New place added.', style: TextStyle(fontSize: 16.0)),
+  //         action: SnackBarAction(
+  //           label: 'Edit',
+  //           onPressed: () async {
+  //             context.go('/place/${newPlace.id}');
+  //           },
+  //         ),
+  //       ),
+  //     );
 
-      // Add the new place to the places stored in appState.
-      final newPlaces = List<Place>.from(appState.places)..add(newPlace);
+  //     // Add the new place to the places stored in appState.
+  //     final newPlaces = List<Place>.from(appState.places)..add(newPlace);
 
-      appState.setPlaces(newPlaces);
-    }
-  }
+  //     appState.setPlaces(newPlaces);
+  //   }
+  // }
   /////////////////////////////////////////////////////////////////////////////
 Future<Marker> _createBusMarker(Bus bus) async {
   final busIcon = await _getBusIcon();

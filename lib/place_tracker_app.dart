@@ -75,11 +75,11 @@ class _PlaceTrackerHomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
               child: Image.asset('assets/logo.png', fit: BoxFit.cover)
               // child: Icon(Icons.pin_drop, size: 24.0),
             ),
-            Text('ShuttleTrak'),
+            const Text('ShuttleTrak'),
           ],
         ),
         actions: [
@@ -106,7 +106,7 @@ class _PlaceTrackerHomePage extends StatelessWidget {
       body: IndexedStack(
         index: state.viewType == PlaceTrackerViewType.map ? 0 : 1,
         children: const [
-          PlaceMap(center: LatLng(45.521563, -122.677433)),
+          PlaceMap(center: LatLng(43.262950, -79.922151)),
           PlaceList()
         ],
       ),
