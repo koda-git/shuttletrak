@@ -164,9 +164,10 @@ _startPeriodicDataFetch(); // Correctly reference _startPeriodicDataFetch here
 
 
   Future<void> fetchDataFromServer() async {
-  var url = Uri.parse('http://192.210.243.192:1337/getdata');
+  var url = Uri.parse('https://cors-anywhere.herokuapp.com/http://192.210.243.192:1337/getdata');
   try {
-    var response = await http.get(url);
+    var headers = {'X-Requested-With': 'XMLHttpRequest'};
+    var response = await http.get(url, headers: headers);
     if (response.statusCode == 200) {
       // Explicitly type 'data' as Map<String, dynamic>
       var data = json.decode(response.body) as Map<String, dynamic>;
