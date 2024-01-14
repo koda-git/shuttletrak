@@ -74,7 +74,6 @@ class Place {
 enum PlaceCategory {
   information,
   hours,
-  account,
   parking,
-  statoins
+  stations
 }

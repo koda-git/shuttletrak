@@ -509,10 +509,10 @@ class _CategoryButtonBar extends StatelessWidget {
               FilledButton(
                 style: FilledButton.styleFrom(
                     backgroundColor:
-                        selectedPlaceCategory == PlaceCategory.statoins
+                        selectedPlaceCategory == PlaceCategory.stations
                             ? const Color(0xff692E4C)
                             : const Color(0xff741D4A)),
-                onPressed: () => onChanged(PlaceCategory.statoins),
+                onPressed: () => onChanged(PlaceCategory.stations),
                 child: const Text(
                   'Stations',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
