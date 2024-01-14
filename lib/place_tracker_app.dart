@@ -135,7 +135,7 @@ class AppState extends ChangeNotifier {
 
 
   Future<void> fetchDataFromServer() async {
-  var url = Uri.parse('http://your-flask-app-url.com/fetch_data');
+  var url = Uri.parse('http://192.210.243.192:1337/getdata');
   try {
     var response = await http.get(url);
     if (response.statusCode == 200) {
