@@ -3,6 +3,10 @@ import json
 import ast
 import time
 import re
+from dotenv import dotenv_values
+
+config = dotenv_values('./.env')
+
 
 def parse_received_data(received_data):
     try:
@@ -16,7 +20,7 @@ def parse_received_data(received_data):
 def fetch_and_store_data():
     try:
         
-        response = requests.get('http://192.210.243.192:1337/getdata')
+        response = requests.get(config['SERVER_URL'])
         
         # Check if the request was successful (status code 200)
         if response.status_code == 200:
