@@ -1,12 +1,16 @@
 import sqlite3
 import requests
 import json
+from dotenv import dotenv_values
+
+# Load the environment variables
+config = dotenv_values('../.env')
 
 # Database file path
 db_path = './reports.db'
 
 # Flask server URL for the POST request
-flask_url = 'http://localhost:1337/post'
+flask_url = config['SERVER_URL']
 
 # Connect to the SQLite database
 conn = sqlite3.connect(db_path)

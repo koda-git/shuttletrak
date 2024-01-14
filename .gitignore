@@ -81,3 +81,4 @@ lib/generated_plugin_registrant.dart
 
 findmy/auth.json
 *.keys
+.env

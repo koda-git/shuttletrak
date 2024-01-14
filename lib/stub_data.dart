@@ -25,7 +25,6 @@ class StubData {
       description:
           'Located at Stearn Dr, behind MUSC and Mills Memorial Library.',
       category: PlaceCategory.parking,
-      //TODO change star rating to parking price
       price: 5.00,
       handicapped: true,
     ),
@@ -36,7 +35,6 @@ class StubData {
       description:
           'Located at Stearn Dr, behind Togo Salmon Hall.',
       category: PlaceCategory.parking,
-      //TODO change star rating to parking price
       price: 5.00,
       handicapped: true,
     ),
@@ -47,7 +45,6 @@ class StubData {
       description:
           'Located next to Parking Lot C on Stearn Dr at Forsyth Ave.',
       category: PlaceCategory.parking,
-      //TODO change star rating to parking price
       price: 5.00,
       handicapped: true,
     ),
