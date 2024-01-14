@@ -1,16 +1,9 @@
-# Place Tracker
+# ShuttleTrak
 
-A sample place tracking app that uses the
-[google_maps_flutter](https://github.com/flutter/plugins/tree/master/packages/google_maps_flutter)
-plugin. Keep track of your favorite places, places you've visited, and places
-you want to go. View details about these places, show them on a map, and get
-directions to them.
+A shuttle bus tracking app using Apple's FindMy Network to allow tracking without a constant data or GPS data
 
-## Goals
+Keep track of McMaster's Shuttle Bus Terminals, Find live locations of Buses, and estimate arrival time.
 
-* Learn how to create an interface composed of GoogleMap and other widgets.
-* Learn how to show, control, and modify a GoogleMap widget.
-* Learn how to place a marker on a map.
 
 ## The important bits
 

@@ -73,3 +73,9 @@
 
 # Flutter Web files
 lib/generated_plugin_registrant.dart
+
+
+# Log files and Authetication Keys
+./FindMy/*.keys
+./FindMy/*.json
+
