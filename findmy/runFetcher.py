@@ -4,8 +4,8 @@ import os
 
 # Define the paths for the scripts
 current_directory = os.path.dirname(os.path.realpath(__file__))
-request_reports_path = os.path.join(current_directory, 'findmy', 'request_reports.py')
-poster_path = os.path.join(current_directory, 'findmy', 'poster.py')
+request_reports_path = os.path.join(current_directory, 'request_reports.py')
+poster_path = os.path.join(current_directory, 'poster.py')
 
 # Log file path
 log_file = os.path.join(current_directory, 'processes.log')
@@ -20,7 +20,7 @@ with open(log_file, 'w') as log: # a for append w for write mode, resets when re
         # Wait for 10 seconds
         time.sleep(10)
 
-        # Run server.py and log output
+        # Run poster.py and log output
         print("Posting fetched location reports to Webserver...")
         subprocess.run(["python3", poster_path], stdout=log, stderr=subprocess.STDOUT)
         
