@@ -3,7 +3,7 @@ import requests
 import json
 
 # Database file path
-db_path = 'reports.db'
+db_path = './reports.db'
 
 # Flask server URL for the POST request
 flask_url = 'http://localhost:1337/post'
