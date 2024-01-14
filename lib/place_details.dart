@@ -175,12 +175,12 @@ class _Map extends StatelessWidget {
       elevation: 4,
       child: SizedBox(
         width: 340,
-        height: 240,
+        height: 340,
         child: GoogleMap(
           onMapCreated: onMapCreated,
           initialCameraPosition: CameraPosition(
             target: center,
-            zoom: 8,
+            zoom: 19,
           ),
           markers: markers,
           zoomGesturesEnabled: false,

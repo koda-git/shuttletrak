@@ -107,7 +107,17 @@ class _PlaceTrackerHomePage extends StatelessWidget {
         index: state.viewType == PlaceTrackerViewType.map ? 0 : 1,
         children: const [
           PlaceMap(center: LatLng(43.262950, -79.922151)),
-          PlaceList()
+          PlaceList(),
+          // GoogleMap(
+          //   initialCameraPosition: CameraPosition(
+          //     target: LatLng(43.262950, -79.922151),
+          //     zoom: 0,
+          //   ),
+          //   zoomGesturesEnabled: false,
+          //   rotateGesturesEnabled: false,
+          //   tiltGesturesEnabled: false,
+          //   scrollGesturesEnabled: false,
+          // ),
         ],
       ),
     );
@@ -126,7 +136,7 @@ class AppState extends ChangeNotifier {
   Pages selectedCategory;
   PlaceTrackerViewType viewType;
 
-  Bus bus = Bus(id: 'bus_marker', latLng: LatLng(43.2616112657774, -79.91961142973378));
+  Bus bus = Bus(id: 'bus_marker', latLng: const LatLng(43.2616112657774, -79.91961142973378));
 
   void updateBusLocation(LatLng newLocation) {
     bus.updateLatLng(newLocation);

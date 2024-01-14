@@ -107,7 +107,7 @@ class _PlaceMapState extends State<PlaceMap> {
               onMapCreated: onMapCreated,
               initialCameraPosition: CameraPosition(
                 target: widget.center!,
-                zoom: 11.0,
+                zoom: 100,
               ),
               mapType: _currentMapType,
               markers: _markers,
@@ -133,6 +133,7 @@ class _PlaceMapState extends State<PlaceMap> {
       );
     });
   }
+  
 
   Future<void> onMapCreated(GoogleMapController controller) async {
     if (!context.mounted) return;
@@ -273,7 +274,7 @@ Future<Marker> _createBusMarker(Bus bus) async {
       position: place.latLng,
       infoWindow: InfoWindow(
         title: place.name,
-        // snippet: 'price: ${place.price}',
+        snippet: 'price: ${place.price}',
         onTap: () => context.go('/place/${place.id}'),
       ),
       icon: await _getPlaceMarkerIcon(place.category),
