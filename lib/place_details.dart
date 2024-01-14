@@ -179,7 +179,7 @@ class _Map extends StatelessWidget {
         height: 240,
         child: GoogleMap(
           onMapCreated: onMapCreated,
-          initialCameraPosition: const CameraPosition(
+          initialCameraPosition: CameraPosition(
             target: center,
             zoom: 16,
           ),
