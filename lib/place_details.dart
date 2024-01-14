@@ -99,7 +99,7 @@ class _PlaceDetailsState extends State<PlaceDetails> {
           onMapCreated: _onMapCreated,
           markers: _markers,
         ),
-        const _Reviews(),
+        // const _Reviews(),
       ],
     );
   }
@@ -179,7 +179,7 @@ class _Map extends StatelessWidget {
         height: 240,
         child: GoogleMap(
           onMapCreated: onMapCreated,
-          initialCameraPosition: CameraPosition(
+          initialCameraPosition: const CameraPosition(
             target: LatLng(43.26150015783331, -79.91967923951988),
             zoom: 16,
           ),
@@ -224,92 +224,92 @@ class _NameTextField extends StatelessWidget {
   }
 }
 
-class _Reviews extends StatelessWidget {
-  const _Reviews();
+// class _Reviews extends StatelessWidget {
+//   const _Reviews();
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Padding(
-          padding: EdgeInsets.fromLTRB(0, 12, 0, 8),
-          child: Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              'Reviews',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.underline,
-                color: Colors.black87,
-              ),
-            ),
-          ),
-        ),
-        Column(
-          children: StubData.reviewStrings
-              .map((reviewText) => _buildSingleReview(reviewText))
-              .toList(),
-        ),
-      ],
-    );
-  }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       children: [
+//         const Padding(
+//           padding: EdgeInsets.fromLTRB(0, 12, 0, 8),
+//           child: Align(
+//             alignment: Alignment.topLeft,
+//             child: Text(
+//               'Reviews',
+//               style: TextStyle(
+//                 fontSize: 24,
+//                 fontWeight: FontWeight.bold,
+//                 decoration: TextDecoration.underline,
+//                 color: Colors.black87,
+//               ),
+//             ),
+//           ),
+//         ),
+//         Column(
+//           children: StubData.reviewStrings
+//               .map((reviewText) => _buildSingleReview(reviewText))
+//               .toList(),
+//         ),
+//       ],
+//     );
+//   }
 
-  Widget _buildSingleReview(String reviewText) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Row(
-            children: [
-              Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  border: Border.all(
-                    width: 3,
-                    color: Colors.grey,
-                  ),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      '5',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                      ),
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                      size: 36,
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Text(
-                  reviewText,
-                  style: const TextStyle(fontSize: 20, color: Colors.black87),
-                  maxLines: null,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Divider(
-          height: 8,
-          color: Colors.grey[700],
-        ),
-      ],
-    );
-  }
-}
+//   Widget _buildSingleReview(String reviewText) {
+//     return Column(
+//       children: [
+//         Padding(
+//           padding: const EdgeInsets.symmetric(vertical: 10),
+//           child: Row(
+//             children: [
+//               Container(
+//                 width: 80,
+//                 height: 80,
+//                 decoration: BoxDecoration(
+//                   borderRadius: BorderRadius.circular(40),
+//                   border: Border.all(
+//                     width: 3,
+//                     color: Colors.grey,
+//                   ),
+//                 ),
+//                 child: const Row(
+//                   mainAxisAlignment: MainAxisAlignment.center,
+//                   children: [
+//                     Text(
+//                       '5',
+//                       style: TextStyle(
+//                         fontSize: 24,
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.black87,
+//                       ),
+//                     ),
+//                     Icon(
+//                       Icons.star,
+//                       color: Colors.amber,
+//                       size: 36,
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               const SizedBox(width: 16),
+//               Expanded(
+//                 child: Text(
+//                   reviewText,
+//                   style: const TextStyle(fontSize: 20, color: Colors.black87),
+//                   maxLines: null,
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//         Divider(
+//           height: 8,
+//           color: Colors.grey[700],
+//         ),
+//       ],
+//     );
+//   }
+// }
 
 /* class _StarBar extends StatelessWidget {
   static const int maxStars = 5;
