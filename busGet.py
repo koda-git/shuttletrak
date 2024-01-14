@@ -6,24 +6,17 @@ import re
 
 def parse_received_data(received_data):
     try:
-        # Use regular expressions to extract the dictionary part
-        match = re.search(r"\{.*\}", received_data)
-        if match:
-            dictionary_part = match.group(0)
-            # Parse the dictionary string into a Python dictionary using ast.literal_eval
-            data_dict = ast.literal_eval(dictionary_part)
-            return data_dict
-        else:
-            print("No dictionary found in the received data.")
-            return None
-    except Exception as e:
+        # Use json.loads to parse the JSON string
+        data_dict = json.loads(received_data)
+        return data_dict
+    except json.JSONDecodeError as e:
         print("Error parsing received data:", e)
         return None
 
 def fetch_and_store_data():
     try:
         
-        response = requests.get('YOUR_API_ENDPOINT')
+        response = requests.get('http://192.210.243.192:1337/getdata')
         
         # Check if the request was successful (status code 200)
         if response.status_code == 200:
@@ -42,9 +35,9 @@ def fetch_and_store_data():
 def main():
     while True:
         # Fetch and store data
-        fetch_and_store_data()
+        parsed = fetch_and_store_data()
         
-        parsed = fetch_and_store_data(input)
+        # parsed = fetch_and_store_data(input)
         
         for key in parsed:
             print(key, parsed[key])
