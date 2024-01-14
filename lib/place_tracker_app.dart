@@ -75,7 +75,7 @@ class _PlaceTrackerHomePage extends StatelessWidget {
               child: Image(image: AssetImage('asset/logo.png'))
               // child: Icon(Icons.pin_drop, size: 24.0),
             ),
-            // Text('Place Tracker'),
+            Text('ShuttleTrak'),
           ],
         ),
         actions: [
