@@ -163,7 +163,7 @@ class _Map extends StatelessWidget {
   final Set<Marker> markers;
 
   const _Map({
-    this.center = const LatLng(43.26150015783331, -79.91967923951988),
+    required this.center,
     required this.mapController,
     required this.onMapCreated,
     required this.markers,
@@ -179,7 +179,7 @@ class _Map extends StatelessWidget {
         height: 240,
         child: GoogleMap(
           onMapCreated: onMapCreated,
-          initialCameraPosition: CameraPosition(
+          initialCameraPosition: const CameraPosition(
             target: center,
             zoom: 16,
           ),
