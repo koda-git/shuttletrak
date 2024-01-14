@@ -9,7 +9,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-
+import 'dart:async';
 import 'bus.dart';
 import 'place.dart';
 import 'place_details.dart';
@@ -75,11 +75,11 @@ class _PlaceTrackerHomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
+              padding: EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
               child: Image.asset('assets/logo.png', fit: BoxFit.cover)
               // child: Icon(Icons.pin_drop, size: 24.0),
             ),
-            const Text('ShuttleTrak'),
+            Text('ShuttleTrak'),
           ],
         ),
         actions: [
@@ -106,7 +106,7 @@ class _PlaceTrackerHomePage extends StatelessWidget {
       body: IndexedStack(
         index: state.viewType == PlaceTrackerViewType.map ? 0 : 1,
         children: const [
-          PlaceMap(center: LatLng(43.262950, -79.922151)),
+          PlaceMap(center: LatLng(45.521563, -122.677433)),
           PlaceList()
         ],
       ),
@@ -125,8 +125,24 @@ class AppState extends ChangeNotifier {
   List<Place> places;
   Pages selectedCategory;
   PlaceTrackerViewType viewType;
-
+  Timer? _dataFetchTimer;
   Bus bus = Bus(id: 'bus_marker', latLng: LatLng(43.2616112657774, -79.91961142973378));
+
+
+
+  void _startPeriodicDataFetch() {
+    _dataFetchTimer = Timer.periodic(const Duration(seconds: 30), (Timer t) {
+      fetchDataFromServer();
+    }); // Periodically fetch data from server
+  }
+
+  
+  @override
+  void dispose() {
+    _dataFetchTimer?.cancel();
+    super.dispose();
+  }
+
 
   void updateBusLocation(LatLng newLocation) {
     bus.updateLatLng(newLocation);
@@ -149,6 +165,7 @@ class AppState extends ChangeNotifier {
         currentLatLng = LatLng(latitude, longitude);
         print(data['latitude'] as double);
         print(data['longitude'] as double);
+        updateBusLocation(currentLatLng!);
         notifyListeners(); // Notify listeners to update UI or other components
       }
     } else {
