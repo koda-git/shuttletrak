@@ -249,7 +249,7 @@ class _PlaceMapState extends State<PlaceMap> {
       position: place.latLng,
       infoWindow: InfoWindow(
         title: place.name,
-        snippet: '${place.starRating} Star Rating',
+        snippet: 'price: ${place.price}',
         onTap: () => context.go('/place/${place.id}'),
       ),
       icon: await _getPlaceMarkerIcon(place.category),
@@ -357,7 +357,7 @@ class _PlaceMapState extends State<PlaceMap> {
         infoWindowParam: InfoWindow(
           title: place.name,
           snippet:
-              place.starRating != 0 ? '${place.starRating} Star Rating' : null,
+              place.starRating != 0 ? 'price: ${place.price}' : null,
         ),
       );
       _updateMarker(marker: marker, updatedMarker: updatedMarker, place: place);
@@ -418,7 +418,10 @@ Future<BitmapDescriptor> _getPlaceMarkerIcon(PlaceCategory category) {
         'assets/hours.png',
       );
     case PlaceCategory.parking:
-      return Future.value(BitmapDescriptor.defaultMarker);
+      return BitmapDescriptor.fromAssetImage(
+        createLocalImageConfiguration(context, size: const Size.square(32)),
+        'assets/parking.png',
+      );
     default:
       return Future.value(BitmapDescriptor.defaultMarker);
   }
