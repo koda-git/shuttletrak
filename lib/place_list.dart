@@ -43,7 +43,7 @@ class _PlaceListState extends State<PlaceList> {
     );
   }
 
-  void _onCategoryChanged(PlaceCategory newCategory) {
+  void _onCategoryChanged(Pages newCategory) {
     _scrollController.jumpTo(0.0);
     Provider.of<AppState>(context, listen: false)
         .setSelectedCategory(newCategory);
@@ -51,10 +51,10 @@ class _PlaceListState extends State<PlaceList> {
 }
 
 class _CategoryButton extends StatelessWidget {
-  final PlaceCategory category;
+  final Pages category;
 
   final bool selected;
-  final ValueChanged<PlaceCategory> onCategoryChanged;
+  final ValueChanged<Pages> onCategoryChanged;
 
   const _CategoryButton({
     required this.category,
@@ -66,11 +66,11 @@ class _CategoryButton extends StatelessWidget {
   Widget build(BuildContext context) {
   final buttonText = (() {
     switch (category) {
-      case PlaceCategory.information:
+      case Pages.information:
         return 'Information';
-      case PlaceCategory.hours:
+      case  Pages.hours:
         return 'Hours';
-      case PlaceCategory.parking:
+      case Pages.parking:
         return 'Parking Lots';
       default:
         return '';
@@ -104,9 +104,9 @@ class _CategoryButton extends StatelessWidget {
 }
 
 class _ListCategoryButtonBar extends StatelessWidget {
-  final PlaceCategory selectedCategory;
+  final Pages selectedCategory;
 
-  final ValueChanged<PlaceCategory> onCategoryChanged;
+  final ValueChanged<Pages> onCategoryChanged;
 
   const _ListCategoryButtonBar({
     required this.selectedCategory,
@@ -119,18 +119,18 @@ class _ListCategoryButtonBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         _CategoryButton(
-          category: PlaceCategory.information,
-          selected: selectedCategory == PlaceCategory.information,
+          category: Pages.information,
+          selected: selectedCategory == Pages.information,
           onCategoryChanged: onCategoryChanged,
         ),
         _CategoryButton(
-          category: PlaceCategory.hours,
-          selected: selectedCategory == PlaceCategory.hours,
+          category: Pages.hours,
+          selected: selectedCategory == Pages.hours,
           onCategoryChanged: onCategoryChanged,
         ),
         _CategoryButton(
-          category: PlaceCategory.parking,
-          selected: selectedCategory == PlaceCategory.parking,
+          category: Pages.parking,
+          selected: selectedCategory == Pages.parking,
           onCategoryChanged: onCategoryChanged,
         ),
       ],
@@ -163,17 +163,17 @@ class _PlaceListTile extends StatelessWidget {
               ),
               maxLines: 3,
             ),
-            Row(
-              children: List.generate(5, (index) {
-                return Icon(
-                  Icons.star,
-                  size: 28.0,
-                  color: place.starRating > index
-                      ? Colors.amber
-                      : Colors.grey[400],
-                );
-              }).toList(),
-            ),
+            // Row(
+            //   children: List.generate(5, (index) {
+            //     return Icon(
+            //       Icons.star,
+            //       size: 28.0,
+            //       color: place.starRating > index
+            //           ? Colors.amber
+            //           : Colors.grey[400],
+            //     );
+            //   }).toList(),
+            // ),
             Text(
               place.description ?? '',
               style: Theme.of(context).textTheme.titleMedium,

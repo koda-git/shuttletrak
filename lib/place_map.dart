@@ -18,7 +18,7 @@ import 'place_tracker_app.dart';
 class MapConfiguration {
   final List<Place> places;
 
-  final PlaceCategory selectedCategory;
+  final Pages selectedCategory;
 
   const MapConfiguration({
     required this.places,
@@ -113,7 +113,7 @@ class _PlaceMapState extends State<PlaceMap> {
               onCameraMove: (position) => _lastMapPosition = position.target,
             ),
             _CategoryButtonBar(
-              selectedPlaceCategory: state.selectedCategory,
+              selectedPages: state.selectedCategory,
               visible: _pendingMarker == null,
               onChanged: _switchSelectedCategory,
             ),
@@ -242,7 +242,7 @@ class _PlaceMapState extends State<PlaceMap> {
 
   Future<Marker> _createPlaceMarker(
     Place place,
-    PlaceCategory selectedCategory,
+    Pages selectedCategory,
   ) async {
     final marker = Marker(
       markerId: MarkerId(place.latLng.toString()),
@@ -321,7 +321,7 @@ class _PlaceMapState extends State<PlaceMap> {
     });
   }
 
-  Future<void> _showPlacesForSelectedCategory(PlaceCategory category) async {
+  Future<void> _showPlacesForSelectedCategory(Pages category) async {
     setState(() {
       for (var marker in List.of(_markedPlaces.keys)) {
         final place = _markedPlaces[marker]!;
@@ -343,7 +343,7 @@ class _PlaceMapState extends State<PlaceMap> {
     ));
   }
 
-  Future<void> _switchSelectedCategory(PlaceCategory category) async {
+  Future<void> _switchSelectedCategory(Pages category) async {
     Provider.of<AppState>(context, listen: false).setSelectedCategory(category);
     await _showPlacesForSelectedCategory(category);
   }
@@ -356,8 +356,6 @@ class _PlaceMapState extends State<PlaceMap> {
       final updatedMarker = marker.copyWith(
         infoWindowParam: InfoWindow(
           title: place.name,
-          snippet:
-              place.starRating != 0 ? 'price: ${place.price}' : null,
         ),
       );
       _updateMarker(marker: marker, updatedMarker: updatedMarker, place: place);
@@ -405,19 +403,19 @@ class _PlaceMapState extends State<PlaceMap> {
     });
   }
 
-Future<BitmapDescriptor> _getPlaceMarkerIcon(PlaceCategory category) {
+Future<BitmapDescriptor> _getPlaceMarkerIcon(Pages category) {
   switch (category) {
-    case PlaceCategory.information:
-      return BitmapDescriptor.fromAssetImage(
-        createLocalImageConfiguration(context, size: const Size.square(32)),
-        'assets/heart.png',
-      );
-    case PlaceCategory.hours:
+    // case Pages.information:
+    //   return BitmapDescriptor.fromAssetImage(
+    //     createLocalImageConfiguration(context, size: const Size.square(32)),
+    //     'assets/heart.png',
+    //   );
+    case Pages.stations:
       return BitmapDescriptor.fromAssetImage(
         createLocalImageConfiguration(context, size: const Size.square(32)),
         'assets/hours.png',
       );
-    case PlaceCategory.parking:
+    case Pages.parking:
       return BitmapDescriptor.fromAssetImage(
         createLocalImageConfiguration(context, size: const Size.square(32)),
         'assets/parking.png',
@@ -428,7 +426,7 @@ Future<BitmapDescriptor> _getPlaceMarkerIcon(PlaceCategory category) {
 }
 
   static List<Place> _getPlacesForCategory(
-      PlaceCategory category, List<Place> places) {
+      Pages category, List<Place> places) {
     return places.where((place) => place.category == category).toList();
   }
 }
@@ -483,12 +481,12 @@ class _AddPlaceButtonBar extends StatelessWidget {
 }
 
 class _CategoryButtonBar extends StatelessWidget {
-  final PlaceCategory selectedPlaceCategory;
+  final Pages selectedPages;
   final bool visible;
-  final ValueChanged<PlaceCategory> onChanged;
+  final ValueChanged<Pages> onChanged;
 
   const _CategoryButtonBar({
-    required this.selectedPlaceCategory,
+    required this.selectedPages,
     required this.visible,
     required this.onChanged,
   });
@@ -509,10 +507,10 @@ class _CategoryButtonBar extends StatelessWidget {
               FilledButton(
                 style: FilledButton.styleFrom(
                     backgroundColor:
-                        selectedPlaceCategory == PlaceCategory.stations
+                        selectedPages == Pages.stations
                             ? const Color(0xff692E4C)
                             : const Color(0xff741D4A)),
-                onPressed: () => onChanged(PlaceCategory.stations),
+                onPressed: () => onChanged(Pages.stations),
                 child: const Text(
                   'Stations',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
@@ -521,10 +519,10 @@ class _CategoryButtonBar extends StatelessWidget {
               FilledButton(
                 style: FilledButton.styleFrom(
                     backgroundColor:
-                        selectedPlaceCategory == PlaceCategory.parking
+                        selectedPages == Pages.parking
                             ? const Color(0xff692E4C)
                             : const Color(0xff741D4A)),
-                onPressed: () => onChanged(PlaceCategory.parking),
+                onPressed: () => onChanged(Pages.parking),
                 child: const Text(
                   'Parking Lots',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
@@ -533,10 +531,10 @@ class _CategoryButtonBar extends StatelessWidget {
               // FilledButton(
               //   style: FilledButton.styleFrom(
               //       backgroundColor:
-              //           selectedPlaceCategory == PlaceCategory.account
+              //           selectedPages == Pages.account
               //               ? const Color(0xff692E4C)
               //               : const Color(0xff741D4A)),
-              //   onPressed: () => onChanged(PlaceCategory.account),
+              //   onPressed: () => onChanged(Pages.account),
               //   child: const Text(
               //     'Account',
               //     style: TextStyle(color: Colors.white, fontSize: 14.0),

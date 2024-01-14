@@ -14,7 +14,7 @@ class StubData {
       name: 'Parking Lot A',
       description:
           'Located between McMaster Divinity College and L.R.Wilson Hall.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -24,7 +24,7 @@ class StubData {
       name: 'Parking Lot B',
       description:
           'Located at Stearn Dr, behind MUSC and Mills Memorial Library.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -34,7 +34,7 @@ class StubData {
       name: 'Parking Lot C',
       description:
           'Located at Stearn Dr, behind Togo Salmon Hall.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -44,7 +44,7 @@ class StubData {
       name: 'Parking Lot D',
       description:
           'Located next to Parking Lot C on Stearn Dr at Forsyth Ave.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -54,7 +54,7 @@ class StubData {
       name: 'L.R. Wilson Underground Parking',
       description:
           'Located underground at L.R. Wilson Hall.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -64,7 +64,7 @@ class StubData {
       name: 'Stadium Underground Parking',
       description:
           'Located under the stadium.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -74,7 +74,7 @@ class StubData {
       name: 'Parking Lot G',
       description:
           'Located opposite Hedden Hall.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -84,7 +84,7 @@ class StubData {
       name: 'Parking Lot H',
       description:
           'Located on Michell Cresent and north of Alumini Field.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -94,7 +94,7 @@ class StubData {
       name: 'Parking Lot I',
       description:
           'Located next to the IT Building.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -104,7 +104,7 @@ class StubData {
       name: 'Parking Lot J',
       description:
           'Located along College Crescent.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -114,7 +114,7 @@ class StubData {
       name: 'Parking Lot K',
       description:
           'Located on Westaway Rd at Cootes Dr.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -124,7 +124,7 @@ class StubData {
       name: 'Parking Lot L',
       description:
           'Located behind Campus Service Building.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -134,7 +134,7 @@ class StubData {
       name: 'Parking Lot M',
       description:
           'Located at west of Westaway Rd, Ainsile Wood North.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -144,7 +144,7 @@ class StubData {
       name: 'Parking Lot N',
       description:
           'Located next to Parking Lot M at Westaway Rd.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -154,7 +154,7 @@ class StubData {
       name: 'Parking Lot P',
       description:
           'Located north of Parking Lot N.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
@@ -164,7 +164,7 @@ class StubData {
       name: 'Parking Lot Q',
       description:
           'Located at President Dr in front of Bates Residence.',
-      category: PlaceCategory.parking,
+      category: Pages.parking,
       price: 5.00,
       handicapped: true,
     ),
