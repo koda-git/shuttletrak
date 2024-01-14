@@ -2,9 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
 import 'bus.dart';
@@ -68,12 +71,12 @@ class _PlaceTrackerHomePage extends StatelessWidget {
     var state = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
+        title: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
-              child: Image(image: AssetImage('assets/logo.png'))
+              child: Image.asset('assets/logo.png', fit: BoxFit.cover)
               // child: Icon(Icons.pin_drop, size: 24.0),
             ),
             Text('ShuttleTrak'),
@@ -117,10 +120,45 @@ class AppState extends ChangeNotifier {
     this.selectedCategory = Pages.information,
     this.viewType = PlaceTrackerViewType.map,
   });
-
+//////////////////////////////////////////////////////////////////////////////////////////////
+  LatLng? currentLatLng;
   List<Place> places;
   Pages selectedCategory;
   PlaceTrackerViewType viewType;
+
+  Bus bus = Bus(id: 'bus_marker', latLng: LatLng(43.2616112657774, -79.91961142973378));
+
+  void updateBusLocation(LatLng newLocation) {
+    bus.updateLatLng(newLocation);
+    notifyListeners(); // Notify listeners about the change
+  }
+
+
+  Future<void> fetchDataFromServer() async {
+  var url = Uri.parse('http://your-flask-app-url.com/fetch_data');
+  try {
+    var response = await http.get(url);
+    if (response.statusCode == 200) {
+      // Explicitly type 'data' as Map<String, dynamic>
+      var data = json.decode(response.body) as Map<String, dynamic>;
+      // Check if keys exist and values are of expected types
+      if (data.containsKey('latitude') && data['latitude'] is double &&
+          data.containsKey('longitude') && data['longitude'] is double) {
+        double latitude = data['latitude'] as double;
+        double longitude = data['longitude'] as double;
+        currentLatLng = LatLng(latitude, longitude);
+        print(data['latitude'] as double);
+        print(data['longitude'] as double);
+        notifyListeners(); // Notify listeners to update UI or other components
+      }
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  } catch (e) {
+    print('Error fetching data: $e');
+  }
+}
+  
 
   void setViewType(PlaceTrackerViewType viewType) {
     this.viewType = viewType;
