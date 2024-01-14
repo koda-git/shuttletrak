@@ -50,7 +50,7 @@ class PlaceTrackerApp extends StatelessWidget {
               builder: (context, state) {
                 final id = state.pathParameters['id']!;
                 final place = context
-                    .read<AppState>()
+                    .watch<AppState>()
                     .places
                     .singleWhere((place) => place.id == id);
                 return PlaceDetails(place: place);
@@ -129,8 +129,10 @@ class AppState extends ChangeNotifier {
     this.places = StubData.places,
     this.selectedCategory = Pages.information,
     this.viewType = PlaceTrackerViewType.map,
-}) : bus = Bus(id: 'bus_marker', latLng: LatLng(43.2616112657774, -79.91961142973378)) {
+}) : bus = Bus(id: 'bus_marker123', latLng: LatLng(43.2616112657774, -79.91961142973378)) {
 _startPeriodicDataFetch(); // Correctly reference _startPeriodicDataFetch here
+print("Started Periodic Data Fetch");
+print(bus.latLng.toString());
 }
   
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -140,7 +142,6 @@ _startPeriodicDataFetch(); // Correctly reference _startPeriodicDataFetch here
   PlaceTrackerViewType viewType;
   Timer? _dataFetchTimer;
   Bus bus = Bus(id: 'bus_marker', latLng: LatLng(43.2616112657774, -79.91961142973378));
-
 
 
   void _startPeriodicDataFetch() {
@@ -159,7 +160,11 @@ _startPeriodicDataFetch(); // Correctly reference _startPeriodicDataFetch here
 
   void updateBusLocation(LatLng newLocation) {
     bus.updateLatLng(newLocation);
+    print("Updated Location!");
     notifyListeners(); // Notify listeners about the change
+    print("Notified!");
+    print(bus.latLng.toString());
+    
   }
 
 
