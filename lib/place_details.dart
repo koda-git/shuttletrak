@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 
+import 'hours_page.dart';
+import 'bus.dart';
 import 'place.dart';
 import 'place_tracker_app.dart';
 import 'stub_data.dart';
@@ -163,7 +165,7 @@ class _Map extends StatelessWidget {
   final Set<Marker> markers;
 
   const _Map({
-    required this.center,
+    this.center = const LatLng(43.26150015783331, -79.91967923951988),
     required this.mapController,
     required this.onMapCreated,
     required this.markers,
@@ -179,9 +181,9 @@ class _Map extends StatelessWidget {
         height: 240,
         child: GoogleMap(
           onMapCreated: onMapCreated,
-          initialCameraPosition: const CameraPosition(
+          initialCameraPosition: CameraPosition(
             target: center,
-            zoom: 16,
+            zoom: 8,
           ),
           markers: markers,
           zoomGesturesEnabled: false,

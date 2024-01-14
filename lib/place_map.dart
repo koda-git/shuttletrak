@@ -12,6 +12,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
+import 'bus.dart';
 import 'place.dart';
 import 'place_tracker_app.dart';
 

@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 
+import 'bus.dart';
 import 'place.dart';
 import 'place_details.dart';
 import 'place_list.dart';
