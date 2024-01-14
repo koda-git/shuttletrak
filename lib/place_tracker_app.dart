@@ -129,7 +129,10 @@ class AppState extends ChangeNotifier {
     this.places = StubData.places,
     this.selectedCategory = Pages.information,
     this.viewType = PlaceTrackerViewType.map,
-  });
+}) : bus = Bus(id: 'bus_marker', latLng: LatLng(43.2616112657774, -79.91961142973378)) {
+_startPeriodicDataFetch(); // Correctly reference _startPeriodicDataFetch here
+}
+  
 //////////////////////////////////////////////////////////////////////////////////////////////
   LatLng? currentLatLng;
   List<Place> places;
