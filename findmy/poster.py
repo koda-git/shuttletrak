@@ -6,7 +6,7 @@ import json
 db_path = './reports.db'
 
 # Flask server URL for the POST request
-flask_url = 'http://localhost:1337/post'
+flask_url = 'http://192.210.243.192:1337/post'
 
 # Connect to the SQLite database
 conn = sqlite3.connect(db_path)
