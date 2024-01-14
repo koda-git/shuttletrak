@@ -8,9 +8,8 @@ class Place {
   final String id;
   final LatLng latLng;
   final String name;
-  final PlaceCategory category;
+  final Pages category;
   final String? description;
-  final int starRating;
   final double price;
   final bool handicapped;
 
@@ -20,10 +19,12 @@ class Place {
     required this.name,
     required this.category,
     this.description,
-    this.starRating = 0, 
-    required this.price,
+    this.price = 0,
     this.handicapped = false,
-  }) : assert(starRating >= 0 && starRating <= 5);
+  });
+  
+
+  
 
   double get latitude => latLng.latitude;
 
@@ -33,9 +34,8 @@ class Place {
     String? id,
     LatLng? latLng,
     String? name,
-    PlaceCategory? category,
+    Pages? category,
     String? description,
-    int? starRating,
   }) {
     return Place(
       price: price ?? this.price,
@@ -45,7 +45,6 @@ class Place {
       name: name ?? this.name,
       category: category ?? this.category,
       description: description ?? this.description,
-      starRating: starRating ?? this.starRating,
     );
   }
 
@@ -58,8 +57,7 @@ class Place {
           latLng == other.latLng &&
           name == other.name &&
           category == other.category &&
-          description == other.description &&
-          starRating == other.starRating;
+          description == other.description;
 
   @override
   int get hashCode =>
@@ -67,13 +65,12 @@ class Place {
       latLng.hashCode ^
       name.hashCode ^
       category.hashCode ^
-      description.hashCode ^
-      starRating.hashCode;
+      description.hashCode;
 }
 
-enum PlaceCategory {
+enum Pages {
+  parking,
+  stations,
   information,
   hours,
-  parking,
-  stations
 }

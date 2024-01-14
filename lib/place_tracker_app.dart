@@ -114,12 +114,12 @@ class _PlaceTrackerHomePage extends StatelessWidget {
 class AppState extends ChangeNotifier {
   AppState({
     this.places = StubData.places,
-    this.selectedCategory = PlaceCategory.information,
+    this.selectedCategory = Pages.information,
     this.viewType = PlaceTrackerViewType.map,
   });
 
   List<Place> places;
-  PlaceCategory selectedCategory;
+  Pages selectedCategory;
   PlaceTrackerViewType viewType;
 
   void setViewType(PlaceTrackerViewType viewType) {
@@ -127,7 +127,7 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setSelectedCategory(PlaceCategory newCategory) {
+  void setSelectedCategory(Pages newCategory) {
     selectedCategory = newCategory;
     notifyListeners();
   }
