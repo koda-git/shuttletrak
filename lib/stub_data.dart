@@ -168,6 +168,55 @@ class StubData {
       price: 5.00,
       handicapped: true,
     ),
+    Place(
+      id: '16',
+      latLng: LatLng(43.264085, -79.928189),
+      name: 'Bus Stop 1',
+      description:
+          'Located for Parking Lot P (Eastbound/Westbound)',
+      category: Pages.stations,
+    ),
+    Place(
+      id: '17',
+      latLng: LatLng(43.263143, -79.928595),
+      name: 'Bus Stop 2',
+      description:
+          'Located for Parking Lot M (Eastbound)',
+      category: Pages.stations,
+    ),
+    Place(
+      id: '18',
+      latLng: LatLng(43.259949, -79.922409),
+      name: 'Bus Stop 3',
+      description:
+          'Located for Parking Lot I (Eastbound)',
+      category: Pages.stations,
+    ),
+    Place(
+      id: '19',
+      latLng: LatLng(43.263221, -79.916961),
+      name: 'Bus Stop 4',
+      description:
+          'Located for Parking Lot B (Eastbound/Westbound)',
+      category: Pages.stations,
+    ),
+    Place(
+      id: '20',
+      latLng: LatLng(43.260091, -79.922053),
+      name: 'Bus Stop 5',
+      description:
+          'Located for Parking Lot I (WestBound)',
+      category: Pages.stations,
+    ),
+    Place(
+      id: '21',
+      latLng: LatLng(43.263152, -79.923156),
+      name: 'Bus Stop 6',
+      description:
+          'Located for Bates Residence (Westbound)',
+      category: Pages.stations,
+    ),
+    
   ];
 
   static const reviewStrings = [

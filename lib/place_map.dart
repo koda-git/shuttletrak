@@ -118,11 +118,11 @@ class _PlaceMapState extends State<PlaceMap> {
               visible: _pendingMarker == null,
               onChanged: _switchSelectedCategory,
             ),
-            _AddPlaceButtonBar(
-              visible: _pendingMarker != null,
-              onSavePressed: () => _confirmAddPlace(context),
-              onCancelPressed: _cancelAddPlace,
-            ),
+            // _AddPlaceButtonBar(
+            //   visible: _pendingMarker != null,
+            //   onSavePressed: () => _confirmAddPlace(context),
+            //   onCancelPressed: _cancelAddPlace,
+            // ),
             _MapFabs(
               // visible: _pendingMarker == null,
               // onAddPlacePressed: _onAddPlacePressed,
@@ -242,23 +242,43 @@ class _PlaceMapState extends State<PlaceMap> {
   }
 
   Future<Marker> _createPlaceMarker(
-    Place place,
-    Pages selectedCategory,
+    Place place, 
+    Pages category
   ) async {
     final marker = Marker(
       markerId: MarkerId(place.latLng.toString()),
       position: place.latLng,
       infoWindow: InfoWindow(
         title: place.name,
-        snippet: 'price: ${place.price}',
+        // snippet: 'price: ${place.price}',
         onTap: () => context.go('/place/${place.id}'),
       ),
       icon: await _getPlaceMarkerIcon(place.category),
-      visible: place.category == selectedCategory,
+      visible: place.category == Pages.parking,
     );
     _markedPlaces[marker] = place;
     return marker;
   }
+
+
+  // Future<Marker> _createPlaceMarkerStation(
+  //   Place place,
+  //   Pages selectedCategory,
+  // ) async {
+  //   final marker = Marker(
+  //     markerId: MarkerId(place.latLng.toString()),
+  //     position: place.latLng,
+  //     infoWindow: InfoWindow(
+  //       title: place.name,
+  //       snippet: 'price: ${place.price}',
+  //       onTap: () => context.go('/place/${place.id}'),
+  //     ),
+  //     icon: await _getPlaceMarkerIcon(place.category),
+  //     visible: place.category == selectedCategory,
+  //   );
+  //   _markedPlaces[marker] = place;
+  //   return marker;
+  // }
 
   Future<void> _watchMapConfigurationChanges() async {
     final appState = context.read<AppState>();
@@ -414,7 +434,7 @@ Future<BitmapDescriptor> _getPlaceMarkerIcon(Pages category) {
     case Pages.stations:
       return BitmapDescriptor.fromAssetImage(
         createLocalImageConfiguration(context, size: const Size.square(32)),
-        'assets/hours.png',
+        'assets/station.png',
       );
     case Pages.parking:
       return BitmapDescriptor.fromAssetImage(
@@ -432,54 +452,54 @@ Future<BitmapDescriptor> _getPlaceMarkerIcon(Pages category) {
   }
 }
 
-class _AddPlaceButtonBar extends StatelessWidget {
-  final bool visible;
+// class _AddPlaceButtonBar extends StatelessWidget {
+//   final bool visible;
 
-  final VoidCallback onSavePressed;
-  final VoidCallback onCancelPressed;
+//   final VoidCallback onSavePressed;
+//   final VoidCallback onCancelPressed;
 
-  const _AddPlaceButtonBar({
-    required this.visible,
-    required this.onSavePressed,
-    required this.onCancelPressed,
-  });
+//   const _AddPlaceButtonBar({
+//     required this.visible,
+//     required this.onSavePressed,
+//     required this.onCancelPressed,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Visibility(
-      visible: visible,
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 14.0),
-        alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: OverflowBar(
-            alignment: MainAxisAlignment.center,
-            spacing: 8.0,
-            children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                ),
-                onPressed: onSavePressed,
-                child: const Text('Save'),
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  foregroundColor: Colors.white,
-                ),
-                onPressed: onCancelPressed,
-                child: const Text('Cancel'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Visibility(
+  //     visible: visible,
+  //     child: Container(
+  //       padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 14.0),
+  //       alignment: Alignment.bottomCenter,
+  //       child: Padding(
+  //         padding: const EdgeInsets.all(8.0),
+  //         child: OverflowBar(
+  //           alignment: MainAxisAlignment.center,
+  //           spacing: 8.0,
+  //           children: [
+  //             ElevatedButton(
+  //               style: ElevatedButton.styleFrom(
+  //                 backgroundColor: Colors.blue,
+  //                 foregroundColor: Colors.white,
+  //               ),
+  //               onPressed: onSavePressed,
+  //               child: const Text('Save'),
+  //             ),
+  //             ElevatedButton(
+  //               style: ElevatedButton.styleFrom(
+  //                 backgroundColor: Colors.red,
+  //                 foregroundColor: Colors.white,
+  //               ),
+  //               onPressed: onCancelPressed,
+  //               child: const Text('Cancel'),
+  //             ),
+  //           ],
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
+// }
 
 class _CategoryButtonBar extends StatelessWidget {
   final Pages selectedPages;
