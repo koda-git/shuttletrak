@@ -129,7 +129,7 @@ class AppState extends ChangeNotifier {
     this.places = StubData.places,
     this.selectedCategory = Pages.information,
     this.viewType = PlaceTrackerViewType.map,
-}) : bus = Bus(id: 'bus_marker123', latLng: LatLng(43.2616112657774, -79.91961142973378)) {
+}) : bus = Bus(id: 'bus_marker123', latLng: LatLng(43.2655854, -79.9178141)) {
 _startPeriodicDataFetch(); // Correctly reference _startPeriodicDataFetch here
 print("Started Periodic Data Fetch");
 print(bus.latLng.toString());
@@ -141,7 +141,7 @@ print(bus.latLng.toString());
   Pages selectedCategory;
   PlaceTrackerViewType viewType;
   Timer? _dataFetchTimer;
-  Bus bus = Bus(id: 'bus_marker', latLng: LatLng(43.2616112657774, -79.91961142973378));
+  Bus bus = Bus(id: 'bus_marker', latLng: LatLng(-79.9178141, 43.2655854));
 
 
   void _startPeriodicDataFetch() {
