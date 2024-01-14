@@ -122,11 +122,11 @@ class _PlaceMapState extends State<PlaceMap> {
               onSavePressed: () => _confirmAddPlace(context),
               onCancelPressed: _cancelAddPlace,
             ),
-            _MapFabs(
-              visible: _pendingMarker == null,
-              onAddPlacePressed: _onAddPlacePressed,
-              onToggleMapTypePressed: _onToggleMapTypePressed,
-            ),
+            // _MapFabs(
+            //   visible: _pendingMarker == null,
+            //   onAddPlacePressed: _onAddPlacePressed,
+            //   onToggleMapTypePressed: _onToggleMapTypePressed,
+            // ),
           ],
         ),
       );
@@ -298,19 +298,19 @@ class _PlaceMapState extends State<PlaceMap> {
     }
   }
 
-  Future<void> _onAddPlacePressed() async {
-    setState(() {
-      final newMarker = Marker(
-        markerId: MarkerId(_lastMapPosition.toString()),
-        position: _lastMapPosition!,
-        infoWindow: const InfoWindow(title: 'New Place'),
-        draggable: true,
-        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen),
-      );
-      _markers.add(newMarker);
-      _pendingMarker = newMarker;
-    });
-  }
+  // Future<void> _onAddPlacePressed() async {
+  //   setState(() {
+  //     final newMarker = Marker(
+  //       markerId: MarkerId(_lastMapPosition.toString()),
+  //       position: _lastMapPosition!,
+  //       infoWindow: const InfoWindow(title: 'New Place'),
+  //       draggable: true,
+  //       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen),
+  //     );
+  //     _markers.add(newMarker);
+  //     _pendingMarker = newMarker;
+  //   });
+  // }
 
   void _onToggleMapTypePressed() {
     final nextType =
@@ -530,12 +530,12 @@ class _CategoryButtonBar extends StatelessWidget {
               // FilledButton(
               //   style: FilledButton.styleFrom(
               //       backgroundColor:
-              //           selectedPlaceCategory == PlaceCategory.parking
-              //               ? Colors.green[700]
-              //               : Colors.lightGreen),
-              //   onPressed: () => onChanged(PlaceCategory.parking),
+              //           selectedPlaceCategory == PlaceCategory.account
+              //               ? const Color(0xff692E4C)
+              //               : const Color(0xff741D4A)),
+              //   onPressed: () => onChanged(PlaceCategory.account),
               //   child: const Text(
-              //     'Parking',
+              //     'Account',
               //     style: TextStyle(color: Colors.white, fontSize: 14.0),
               //   ),
               // ),
