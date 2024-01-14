@@ -75,7 +75,7 @@ class _PlaceTrackerHomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
               child: Image.asset('assets/logo.png', fit: BoxFit.cover)
               // child: Icon(Icons.pin_drop, size: 24.0),
             ),
