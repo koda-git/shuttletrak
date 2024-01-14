@@ -22,6 +22,9 @@ class Place {
     this.price = 0,
     this.handicapped = false,
   });
+  
+
+  
 
   double get latitude => latLng.latitude;
 
@@ -71,7 +74,3 @@ enum Pages {
   information,
   hours,
 }
-
-
-
-
