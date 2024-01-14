@@ -4,8 +4,8 @@ import os
 
 # Define the paths for the scripts
 current_directory = os.path.dirname(os.path.realpath(__file__))
-request_reports_path = os.path.join(current_directory, '..', 'findmy', 'request_reports.py')
-poster_path = os.path.join(current_directory, '..', 'findmy', 'poster.py')
+request_reports_path = os.path.join(current_directory, 'findmy', 'request_reports.py')
+poster_path = os.path.join(current_directory, 'findmy', 'poster.py')
 
 # Log file path
 log_file = os.path.join(current_directory, 'processes.log')
