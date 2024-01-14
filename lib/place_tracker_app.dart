@@ -26,13 +26,13 @@ class PlaceTrackerApp extends StatelessWidget {
     return MaterialApp.router(
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.green,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.green[700],
+        colorSchemeSeed: Colors.black,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xff741D4A),
           foregroundColor: Colors.white,
         ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.green[700],
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xff741D4A),
           foregroundColor: Colors.white,
         ),
       ),
