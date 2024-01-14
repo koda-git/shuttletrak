@@ -79,3 +79,5 @@ lib/generated_plugin_registrant.dart
 ./FindMy/*.keys
 ./FindMy/*.json
 
+findmy/auth.json
+*.keys

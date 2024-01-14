@@ -180,7 +180,7 @@ class _Map extends StatelessWidget {
         child: GoogleMap(
           onMapCreated: onMapCreated,
           initialCameraPosition: CameraPosition(
-            target: center,
+            target: LatLng(43.26150015783331, -79.91967923951988),
             zoom: 16,
           ),
           markers: markers,
