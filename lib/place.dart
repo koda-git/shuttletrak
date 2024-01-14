@@ -38,8 +38,8 @@ class Place {
     String? description,
   }) {
     return Place(
-      price: price ?? this.price,
-      handicapped: handicapped ?? this.handicapped,
+      price: price ?? price,
+      handicapped: handicapped ?? handicapped,
       id: id ?? this.id,
       latLng: latLng ?? this.latLng,
       name: name ?? this.name,

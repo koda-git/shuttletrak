@@ -1,4 +1,4 @@
-name: place_tracker
+name: shuttletrak
 description: A new Flutter project.
 
 version: 1.0.0+1
@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   google_maps_flutter: ^2.2.0
   provider: ^6.0.2
+  http: ^0.13.3
   uuid: ^4.0.0
   go_router: ">=10.0.0 <14.0.0"
   collection: ^1.16.0

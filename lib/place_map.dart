@@ -146,6 +146,18 @@ class _PlaceMapState extends State<PlaceMap> {
     for (var place in appState.places) {
       markers.add(await _createPlaceMarker(place, appState.selectedCategory));
     }
+    // Create a marker for the Bus
+
+    Marker busMarker = Marker(
+      markerId: MarkerId(appState.bus.id),
+      position: appState.bus.latLng,
+      infoWindow: InfoWindow(title: appState.bus.id),
+      // You can add an icon and other properties as needed
+    );
+    markers.add(busMarker);
+
+
+
     setState(() {
       _markers.addAll(markers);
     });
@@ -198,6 +210,7 @@ class _PlaceMapState extends State<PlaceMap> {
       final scaffoldMessenger = ScaffoldMessenger.of(context);
 
       var placeMarker = await _getPlaceMarkerIcon(appState.selectedCategory);
+      var busMarker = await _getBusIcon();
 
       setState(() {
         final updatedMarker = _pendingMarker!.copyWith(
@@ -240,6 +253,16 @@ class _PlaceMapState extends State<PlaceMap> {
       appState.setPlaces(newPlaces);
     }
   }
+  /////////////////////////////////////////////////////////////////////////////
+Future<Marker> _createBusMarker(Bus bus) async {
+  final busIcon = await _getBusIcon();
+  final marker = Marker(
+    markerId: const MarkerId('bus_marker'), // Unique ID for the bus marker
+    position: bus.latLng, // Initial position of the bus
+    icon: busIcon,
+  );
+  return marker;
+}
 
   Future<Marker> _createPlaceMarker(
     Place place, 
@@ -423,6 +446,23 @@ class _PlaceMapState extends State<PlaceMap> {
       );
     });
   }
+////////////////////////////////////////////////////////////////////////////////
+Future<BitmapDescriptor> _getBusIcon() async {
+      return BitmapDescriptor.fromAssetImage(
+        createLocalImageConfiguration(context, size: const Size.square(32)),
+        'assets/bus.png',
+      );
+}
+
+
+
+/* var busMarkerIcon = await _getBusMarkerIcon();
+var busMarker = Marker(
+  markerId: MarkerId(bus.id),
+  position: bus.latLng,
+  icon: busMarkerIcon,
+  // other marker properties...
+); */
 
 Future<BitmapDescriptor> _getPlaceMarkerIcon(Pages category) {
   switch (category) {

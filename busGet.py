@@ -1,16 +1,15 @@
+from flask import Flask, jsonify
 import requests
 import json
-import ast
-import time
-import re
 from dotenv import dotenv_values
 
+# Load environment variables
 config = dotenv_values('./.env')
 
+app = Flask(__name__)
 
 def parse_received_data(received_data):
     try:
-        # Use json.loads to parse the JSON string
         data_dict = json.loads(received_data)
         return data_dict
     except json.JSONDecodeError as e:
@@ -19,36 +18,29 @@ def parse_received_data(received_data):
 
 def fetch_and_store_data():
     try:
-        
         response = requests.get(config['GET_URL'])
-        
-        # Check if the request was successful (status code 200)
         if response.status_code == 200:
-            # Parse the received data string
             received_data_str = response.text
             data_dict = parse_received_data(received_data_str)
-        
-        # Check if parsing was successful
-        if data_dict is not None:
-            #print("Parsed data:", data_dict)
-            return data_dict
-                    
+            if data_dict is not None:
+                return data_dict
     except Exception as e:
         print("Error:", e)
-
-def main():
-    while True:
-        # Fetch and store data
-        parsed = fetch_and_store_data()
-        
-        # parsed = fetch_and_store_data(input)
-        
-        for key in parsed:
-            print(key, parsed[key])
-        # Wait for 30 seconds before making the next fetch request
-        time.sleep(30)
-    input = "Received data: {'datePublished': 1705195638316, 'id': 'ppqCpzp14Agk8Haqy+EDBwdmGDlrJYepJGeCfGk7oW4=', 'longitude': 43.2657083, 'latitude': -79.9177732}"
+        return None
     
+def schedule_fetch_and_store_data():
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(func=fetch_and_store_data, trigger="interval", seconds=30)
+    scheduler.start()
+
+@app.route('/fetch_data', methods=['GET'])
+def fetch_data_route():
+    data = fetch_and_store_data()
+    if data:
+        return jsonify(data)
+    else:
+        return jsonify({"error": "Failed to fetch data"}), 500
 
 if __name__ == "__main__":
-    main()
+    schedule_fetch_and_store_data()
+    app.run(debug=True)
