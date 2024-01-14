@@ -20,7 +20,7 @@ def parse_received_data(received_data):
 def fetch_and_store_data():
     try:
         
-        response = requests.get(config['SERVER_URL'])
+        response = requests.get(config['GET_URL'])
         
         # Check if the request was successful (status code 200)
         if response.status_code == 200:

@@ -179,8 +179,8 @@ class _Map extends StatelessWidget {
         height: 240,
         child: GoogleMap(
           onMapCreated: onMapCreated,
-          initialCameraPosition: const CameraPosition(
-            target: LatLng(43.26150015783331, -79.91967923951988),
+          initialCameraPosition: CameraPosition(
+            target: center,
             zoom: 16,
           ),
           markers: markers,
