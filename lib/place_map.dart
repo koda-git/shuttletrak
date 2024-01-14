@@ -122,11 +122,11 @@ class _PlaceMapState extends State<PlaceMap> {
               onSavePressed: () => _confirmAddPlace(context),
               onCancelPressed: _cancelAddPlace,
             ),
-            // _MapFabs(
-            //   visible: _pendingMarker == null,
-            //   onAddPlacePressed: _onAddPlacePressed,
-            //   onToggleMapTypePressed: _onToggleMapTypePressed,
-            // ),
+            _MapFabs(
+              // visible: _pendingMarker == null,
+              // onAddPlacePressed: _onAddPlacePressed,
+              onToggleMapTypePressed: _onToggleMapTypePressed,
+            ),
           ],
         ),
       );
@@ -551,13 +551,13 @@ class _CategoryButtonBar extends StatelessWidget {
 }
 
 class _MapFabs extends StatelessWidget {
-  final bool visible;
-  final VoidCallback onAddPlacePressed;
+  // final bool visible;
+  // final VoidCallback onAddPlacePressed;
   final VoidCallback onToggleMapTypePressed;
 
   const _MapFabs({
-    required this.visible,
-    required this.onAddPlacePressed,
+    // required this.visible,
+    // required this.onAddPlacePressed,
     required this.onToggleMapTypePressed,
   });
 
@@ -567,15 +567,15 @@ class _MapFabs extends StatelessWidget {
       alignment: Alignment.topRight,
       margin: const EdgeInsets.only(top: 12.0, right: 12.0),
       child: Visibility(
-        visible: visible,
+        // visible: visible,
         child: Column(
           children: [
-            FloatingActionButton(
-              heroTag: 'add_place_button',
-              onPressed: onAddPlacePressed,
-              materialTapTargetSize: MaterialTapTargetSize.padded,
-              child: const Icon(Icons.add_location, size: 36.0),
-            ),
+            // FloatingActionButton(
+            //   heroTag: 'add_place_button',
+            //   onPressed: onAddPlacePressed,
+            //   materialTapTargetSize: MaterialTapTargetSize.padded,
+            //   child: const Icon(Icons.add_location, size: 36.0),
+            // ),
             const SizedBox(height: 12.0),
             FloatingActionButton(
               heroTag: 'toggle_map_type_button',
