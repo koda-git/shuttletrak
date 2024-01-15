@@ -169,7 +169,7 @@ print(bus.latLng.toString());
 
 
   Future<void> fetchDataFromServer() async {
-  var url = Uri.parse('https://cors-anywhere.herokuapp.com/http://192.210.243.192:1337/getdata');
+  var url = Uri.parse('INSERT IP HERE');
   try {
     var headers = {'X-Requested-With': 'XMLHttpRequest'};
     var response = await http.get(url, headers: headers);
