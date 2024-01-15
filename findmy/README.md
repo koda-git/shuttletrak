@@ -11,13 +11,12 @@ docker run -d --restart always --name anisette-v3 -p 6969:6969 dadoum/anisette-v
 2. Follow the installation instructions for `anisette-v3-server` and make sure it works.
 3. Create the database where the reports will be stored:
 ```bash
-sqlite3 reports.db 'CREATE TABLE reports (id_short TEXT, timestamp INTEGER, datePublished INTEGER, payload TEXT, id TEXT, statusCode INTEGER, PRIMARY KEY(id_short,timestamp))'
+sqlite3 reports.db 'CREATE TABLE reports (id_short TEXT, timestamp INTEGER, datePublished INTEGER, payload TEXT, id TEXT, statusCode INTEGER, LONGITUDE REAL, LATITUDE REAL,PRIMARY KEY(id_short,timestamp), )'
 ```
 
 ## Run
 1. `cd` into the `FindMy` directory and generate keys using `./generate_keys.py`.
 2. Deploy your advertisement keys on devices supported by OpenHaystack. 
-3. run
-```
-in the same directory as your `.keys` files.
+3. run `python3 runFetcher`in the same directory as your `.keys` files This will fetch and upload the realtime location data every 60 seconds to the defined webserver
+
 
