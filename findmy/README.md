@@ -1,16 +1,12 @@
 # FindMy
-Query Apple's Find My network, based on all the hard work of https://github.com/seemoo-lab/openhaystack/ and @hatomist and @JJTech0130 and @Dadoum.
-
-This is version 2, which does not require a Mac anymore thanks to the awesome work in https://github.com/JJTech0130/pypush.
-Version 1 that can be run on Macs can still be found in the catalina (python2) and monterey (python3) branches.
+Query Apple's Find My network and adds Longitude and Latitiude, Timestamp data into a database, then sends it to a set custom web server. based on all the hard work of https://github.com/seemoo-lab/openhaystack/ and @hatomist and @JJTech0130 and @Dadoum and @biemster
 
 ## Installation and initial setup
 Only a free Apple ID is required, with SMS 2FA properly setup. If you don't have any, follow one of the many guides found on the internet.
 
-1. Clone this repository and `anisette-v3-server`:
+1. Run `ansiette-v3-server` from docker :
 ```bash
-git clone https://github.com/biemster/FindMy
-git clone https://github.com/Dadoum/anisette-v3-server
+docker run -d --restart always --name anisette-v3 -p 6969:6969 dadoum/anisette-v3-server:latest
 ```
 2. Follow the installation instructions for `anisette-v3-server` and make sure it works.
 3. Create the database where the reports will be stored:
@@ -20,20 +16,8 @@ sqlite3 reports.db 'CREATE TABLE reports (id_short TEXT, timestamp INTEGER, date
 
 ## Run
 1. `cd` into the `FindMy` directory and generate keys using `./generate_keys.py`.
-2. Deploy your advertisement keys on devices supported by OpenHaystack. The ESP32 firmware is a mirror of the OpenHaystack binary, the Lenze 17H66 is found in many 1$ tags obtained from Ali.
-An nRF51 firmware can be found here: https://github.com/dakhnod/FakeTag
+2. Deploy your advertisement keys on devices supported by OpenHaystack. 
 3. run
-```bash
-../anisette-v3-server/anisette-v3-server & ./request_reports.py ; killall anisette-v3-server
 ```
 in the same directory as your `.keys` files.
 
-Alternatively to step 3 you could install `https://github.com/Dadoum/pyprovision` (first install `anisette-v3-server` though to get a nice D environment and the required android libs),
-make a folder `anisette` in your working directory and just run
-```bash
-./request_reports.py
-```
-The script should pick up the python bindings to provision and use that instead.
-
-This current non-Mac workflow is not optimal yet, mainly because the anisette server is a bit of a workaround. A python solution for retrieving this is being
-developed in the pypush discord, please join there if you want to contribute!
