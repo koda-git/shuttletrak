@@ -20,6 +20,7 @@ Provides an interactive map that lets you access the real-time location of your 
    - Tracker: Raspberry Pi4 2GB with Raspbian 10 to act as the BLE device to ping nearby Apple Devices for information
 
 ## Deployment
+ - Add your Google Maps API key at ./shuttletrak/web/index.html @ line 36
  - Run Dart Webserver from Root
  - Create a .env file for the webserver
    - ```
