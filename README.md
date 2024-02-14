@@ -21,7 +21,8 @@ Provides an interactive map that lets you access the real-time location of your 
  - Run Dart Webserver from Root
  - Create a .env file for the webserver
    - ```SERVER_URL="http://{ServerIP}/post"
-GET_URL="http://{ServerIP}/getdata"```
+        GET_URL="http://{ServerIP}/getdata"
+     ```
  - Run ./webserver.py for the server for GET and POST requests
  - Start the Anisette server by running ```docker run -d --restart always --name anisette-v3 -p 6969:6969 dadoum/anisette-v3-server:latest```
  - cd into the FindMy directory
