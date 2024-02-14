@@ -20,7 +20,7 @@ Provides an interactive map that lets you access the real-time location of your 
 ## Deployment
  - Run Dart Webserver from Root
  - Create a .env file for the webserver
-   - ```.env
+   - ```env
         SERVER_URL="http://{ServerIP}/post"
         GET_URL="http://{ServerIP}/getdata"
      ```
