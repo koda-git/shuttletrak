@@ -16,7 +16,7 @@ Provides an interactive map that lets you access the real-time location of your 
  - API used: Apple_Anisette, Openhaystack, Google Maps
  - Backend: Python, Flask
  - Hardware used:
-   - Server: aarch64 or x86_64 system compatible with python3.11 to act as the webserver + parser
+   - Server: aarch64 or x86_64 system compatible with python3.11 to act as the webserver + parser/fetcher
    - Tracker: Raspberry Pi4 2GB with Raspbian 10 to act as the BLE device to ping nearby Apple Devices for information
 
 ## Deployment
