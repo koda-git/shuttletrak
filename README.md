@@ -1,10 +1,12 @@
 # ShuttleTrak (Project for Deltahacks X)
+Hackathon project for Deltahacks X (36 hours)
 
 A shuttle bus tracking app using Apple's FindMy Network to allow tracking without a constant data or GPS data
 Keep track of McMaster's Shuttle Bus Terminals, Find live locations of Buses, and estimate arrival time.
 
 ## How does it work
-With the hard work of https://github.com/seemoo-lab/openhaystack/, We use microcontrollers to track live location data as they send them to nearby iPhones and then Apple's FindMy location servers
+With the hard work of https://github.com/seemoo-lab/openhaystack/, 
+We use microcontrollers to track live location data as they send them to nearby iPhones and then Apple's FindMy location servers
 
 ## FrontEnd Information
 Provides an interactive map that lets you access the real-time location of your shuttle bus and all the on-campus parking information you need. Simply click on any parking lot to see its daily price and handicapp services availability, and easily search up their locations. See your shuttle bus in real time on the map and get a time estimate of when it will arrive.
