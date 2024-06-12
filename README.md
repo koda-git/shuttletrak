@@ -5,8 +5,8 @@ A shuttle bus tracking app using Apple's FindMy Network to allow tracking withou
 Keep track of our university's Shuttle Bus Terminals, Find live locations of Buses, and estimate arrival time.
 
 ## How does it work?
-We use a linux based microcontroller like the **esp32 or raspberry pi zero series**  to run a constant BLE signal with a **public key** that spoofs itself as an another **iDevice**.\
-This makes the microcontroller a part of Apple's findMy network.\We then parse the location data sent via other iDevices upload our microcontrollers relative location my fetching the coordinate data every **30 seconds** from Apple's servers.\ We do this by creating an anisette server that authorizes our **fetcher** webserver using the **private key** ***paired*** to the **public key** that is sent to Apple's FindMy servers. Lastly we organize this data into our flask webapplication and our frontend Application is responsible to send a **GET** request for the coordinates/unixtime and visualize it on **Google Maps**
+We use a linux based microcontroller like the **esp32 or raspberry pi zero series**  to run a constant BLE signal with a **public key** that spoofs itself as an another **iDevice**.\\
+This makes the microcontroller a part of Apple's findMy network.\\We then parse the location data sent via other iDevices upload our microcontrollers relative location my fetching the coordinate data every **30 seconds** from Apple's servers.\\ We do this by creating an anisette server that authorizes our **fetcher** webserver using the **private key** ***paired*** to the **public key** that is sent to Apple's FindMy servers. Lastly we organize this data into our flask webapplication and our frontend Application is responsible to send a **GET** request for the coordinates/unixtime and visualize it on **Google Maps**
 
 - Benefits with this method of tracking
   - Extremely low power usage on the microcontroller as it is using Bluetooth Low Energy
