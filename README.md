@@ -5,11 +5,14 @@ A shuttle bus tracking app using Apple's FindMy Network to allow tracking withou
 Keep track of our university's Shuttle Bus Terminals, Find live locations of Buses, and estimate arrival time.
 
 ## How does it work?
-With the hard work of https://github.com/seemoo-lab/openhaystack/, 
-We use linux based microcontrollers like the **esp32 or raspberry pi zero series**  to run a constant BLE signal that spoofs itself as an another iPhone that is a part of a findMy network. We then parse the location data sent via other iDevices upload our microcontrollers relative location my fetching the coordinate data from Apple's servers. We do this by creating an anisette server that authorizes our **fetcher** webserver using the private key paired to the public key that is sent to Apple's FindMy servers.
+We use a linux based microcontroller like the **esp32 or raspberry pi zero series**  to run a constant BLE signal with a **public key** that spoofs itself as an another **iDevice**.\
+This makes the microcontroller a part of Apple's findMy network.\We then parse the location data sent via other iDevices upload our microcontrollers relative location my fetching the coordinate data every **30 seconds** from Apple's servers.\We do this by creating an anisette server that authorizes our **fetcher** webserver using the **private key** ***paired*** to the **public key** that is sent to Apple's FindMy servers. Lastly we organize this data into our flask webapplication and our frontend Application is responsible to send a **GET** request for the coordinates/unixtime and visualize it on **Google Maps**
 
+- Benefits with this method of tracking
+  - Extremely low power usage on the microcontroller as it is using Bluetooth Low Energy
+  - No need for a cellular signal or plan, all it needs is near by **Apple devices** to ping it to
+  - Works anywhere around the world where there is or was an Apple device nearby
 
-track live location data as they send them to nearby iPhones and then Apple's FindMy location servers
 
 ## FrontEnd Information
 Provides an interactive map that lets you access the real-time location of your shuttle bus and all the on-campus parking information you need. Simply click on any parking lot to see its daily price and handicapp services availability, and easily search up their locations. See your shuttle bus in real time on the map and get a time estimate of when it will arrive.
