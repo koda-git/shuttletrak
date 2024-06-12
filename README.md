@@ -35,7 +35,3 @@ Provides an interactive map that lets you access the real-time location of your 
  - Follow Openhaystack for deployment on the tracker device
  - Run the ```python3 runFetcher.py``` in the same directory as the .keys files
 
-
-## TODO
-Grab and parse data for Bus arrivals and Departs 
-and track estimated times and trip times.
