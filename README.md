@@ -15,7 +15,7 @@ track live location data as they send them to nearby iPhones and then Apple's Fi
 Provides an interactive map that lets you access the real-time location of your shuttle bus and all the on-campus parking information you need. Simply click on any parking lot to see its daily price and handicapp services availability, and easily search up their locations. See your shuttle bus in real time on the map and get a time estimate of when it will arrive.
 
 ## Simple Documentation 
- - Frontend: Flutter
+ - Frontend: Flutter / Dart
  - API used: Apple_Anisette, Openhaystack, Google Maps
  - Backend: Python, Flask
  - Hardware used in live demonstration:
