@@ -19,6 +19,7 @@ Provides an interactive map that lets you access the real-time location of your 
 
 ![](./images/scr1.jpeg)
 ▲ Map of university with its bus stations, and the red marker (placeholder) indicating the current coordinate of the microcontroller
+
 ![](./images/scr2.png)
 ▲ Additional information useful for students
 
