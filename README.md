@@ -14,7 +14,8 @@ We use a Linux-based microcontroller like the **ESP32 or Raspberry Pi Zero serie
   - Works anywhere in the world where there is or was an Apple device nearby.
 
 ## Frontend Information
-Provides an interactive map that lets you access the real-time location of your shuttle bus and all the on-campus parking information you need. Simply click on any parking lot to see its daily price and handicap services availability, and easily search up their locations. See your shuttle bus in real-time on the map and get a time estimate of when it will arrive.&nbsp;
+Provides an interactive map that lets you access the real-time location of your shuttle bus and all the on-campus parking information you need. Simply click on any parking lot to see its daily price and handicap services availability, and easily search up their locations. See your shuttle bus in real-time on the map and get a time estimate of when it will arrive.
+<b/>
 ![](./images/scr1.jpeg)
 - Map of university with its bus stations, and the red marker (placeholder) indicating the current coordinate of the microcontroller
 ![](./images/scr2.png)
