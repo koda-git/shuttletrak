@@ -45,8 +45,10 @@ We use a Linux-based microcontroller like the **ESP32 or Raspberry Pi Zero serie
 | BLE Parsing | FindMy BLE (reverse-engineered) |
 | Platforms   | Android, iOS, Web      |
 | Data Fetch  | `busGet.py`            |
+| Tracker Hw. | Raspberry Pi4, ESP32  |
 
 ---
+
 
 ## Frontend Information
 Provides an interactive map that lets you access the real-time location of your shuttle bus and all the on-campus parking information you need. Simply click on any parking lot to see its daily price and handicap services availability, and easily search up their locations. See your shuttle bus in real-time on the map and get a time estimate of when it will arrive.
@@ -57,18 +59,7 @@ Provides an interactive map that lets you access the real-time location of your 
 ![](./images/scr2.png)
 ▲ Additional information useful for students
 
-## 🧰 Tech Stack
 
-| Layer       | Technology            |
-|-------------|------------------------|
-| Frontend    | Flutter (Dart)         |
-| Backend     | Python (custom server) |
-| BLE Parsing | FindMy BLE (reverse-engineered) |
-| Platforms   | Android, iOS, Web      |
-| Data Fetch  | `busGet.py`            |
-| Tracker Hw. | Raspberry Pi4, ESP32  |
-
----
 
 ## ⚙️ Deployment Instructions
  - Add your Google Maps API key at ./shuttletrak/web/index.html @ line 36
@@ -89,10 +80,11 @@ Provides an interactive map that lets you access the real-time location of your 
 ## 🤝 Team & Credits
 
 Built with ❤️ during DeltaHacks X by McMaster University students (2024).  
+
 FindMy BLE work adapted from community reverse-engineering efforts.
 
 ---
 
 ## 📝 License
 
-MIT © [koda-git](https://github.com/koda-git)
+GPL3 © [koda-git](https://github.com/koda-git)
