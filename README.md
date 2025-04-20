@@ -87,4 +87,4 @@ FindMy BLE work adapted from community reverse-engineering efforts.
 
 ## 📝 License
 
-GPL3 © [koda-git](https://github.com/koda-git)
+AGPL3 © [koda-git](https://github.com/koda-git)
