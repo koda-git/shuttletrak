@@ -82,7 +82,7 @@ Provides an interactive map that lets you access the real-time location of your 
 Built with ❤️ during DeltaHacks X by McMaster University students (2024).  
 https://github.com/christianzhou1 \
 https://github.com/ericpark11 \
-https://github.com/koda-git \
+https://github.com/koda-git 
 
 FindMy BLE work adapted from community reverse-engineering efforts.
 
